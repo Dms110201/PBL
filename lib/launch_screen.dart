@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'package:pbl/daftar_screen.dart';
 
 class LaunchScreen extends StatelessWidget {
