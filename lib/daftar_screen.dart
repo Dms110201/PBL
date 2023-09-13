@@ -84,6 +84,25 @@ class _DaftarScreenState extends State<DaftarScreen> {
                   ),
                 ],
               ),
+              const SizedBox(
+                height: 30,
+              ),
+              ElevatedButton(onPressed:() {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 0, 145, 77),
+                    minimumSize: const Size(400, 40),
+                    shape: const StadiumBorder()
+                  ),
+                  child: const Text('Daftar'),
+                  ),
+                  ElevatedButton(onPressed:() {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 218, 216, 216),
+                    minimumSize: const Size(400, 40),
+                    shape: const StadiumBorder()
+                    ),
+                  child: const Text('Masuk',style: TextStyle(color: Color.fromARGB(171, 0, 160, 101)),
+                  ),)
             ],
           ),
         ),
