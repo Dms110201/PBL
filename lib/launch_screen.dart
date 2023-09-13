@@ -7,7 +7,7 @@ class LaunchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      Future.delayed(const Duration(seconds: 3)). then((value) {
+      Future.delayed(const Duration(seconds: 2)). then((value) {
         Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const DaftarScreen(),
         ),
         (route) => false);
@@ -24,7 +24,7 @@ class LaunchScreen extends StatelessWidget {
                 style: GoogleFonts.robotoFlex(
                   color: Colors.white,
                   fontSize: 13,
-                  fontWeight: FontWeight.w800
+                  fontWeight: FontWeight.bold
                 ),),
               ),
             ),
@@ -33,7 +33,7 @@ class LaunchScreen extends StatelessWidget {
               style: GoogleFonts.robotoFlex(
                 color: Colors.white,
                 fontSize: 13,
-                fontWeight: FontWeight.w800
+                fontWeight: FontWeight.bold
               ),),
             ),
         ],

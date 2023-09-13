@@ -22,7 +22,7 @@ class _DaftarScreenState extends State<DaftarScreen> {
       body: SafeArea(
         child: Center(
           child: Column(
-            children: [
+            children: <Widget>[
               Stack(
                 children: [
                   InkWell(
