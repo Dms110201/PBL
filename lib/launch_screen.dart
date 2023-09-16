@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pbl/daftar_screen.dart';
+import 'package:pbl/daftar_awal.dart';
+
 
 
 class LaunchScreen extends StatelessWidget {
@@ -8,7 +9,7 @@ class LaunchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
       Future.delayed(const Duration(seconds: 5)). then((value) {
-        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const LaunchScreen(),
+        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const Daftar(),
         ),
         (route) => false);
       });

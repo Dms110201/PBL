@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:pbl/verifikasi.dart';
 
-class DaftardanSignup extends StatefulWidget {
-  const DaftardanSignup({super.key});
+class Daftar extends StatefulWidget {
+  const Daftar({super.key});
 
   @override
-  State<DaftardanSignup> createState() => _DaftardanSignupState();
+  State<Daftar> createState() => _DaftarState();
 }
 
-class _DaftardanSignupState extends State<DaftardanSignup> {
+class _DaftarState extends State<Daftar> {
    bool? isChecked = false;
+
   @override
-   Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -35,6 +37,7 @@ class _DaftardanSignupState extends State<DaftardanSignup> {
                         borderSide: BorderSide(color: Colors.grey)),
                     focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.grey)),
+                        hintText: "Nama",
                     fillColor: Colors.white,
                     filled: true,
                   ),
@@ -51,6 +54,7 @@ class _DaftardanSignupState extends State<DaftardanSignup> {
                         borderSide: BorderSide(color: Colors.grey)),
                     focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.grey)),
+                        hintText: "Email",
                     fillColor: Colors.white,
                     filled: true,
                   ),
@@ -67,6 +71,7 @@ class _DaftardanSignupState extends State<DaftardanSignup> {
                         borderSide: BorderSide(color: Colors.grey)),
                     focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.grey)),
+                        hintText: "Kata Sandi",
                     fillColor: Colors.white,
                     filled: true,
                   ),
@@ -91,12 +96,18 @@ class _DaftardanSignupState extends State<DaftardanSignup> {
               ),
               Padding(
                padding: const EdgeInsets.all(20.0),
-               child: ElevatedButton(onPressed:() {},
+               child: ElevatedButton(
+                onPressed:() {
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Verifikasi()),
+                  );
+                },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromRGBO(0, 168, 107, 100),
                       minimumSize: const Size(600, 50),
                     ),
-                    child: const Text('Masuk',
+                    child: const Text('Daftar',
                       style: TextStyle(color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 18.0,
