@@ -22,7 +22,7 @@ class _DaftarScreenState extends State<DaftarScreen> {
       body: SafeArea(
         child: Center(
           child: Column(
-            children: <Widget>[
+            children: [
               Stack(
                 children: [
                   InkWell(
@@ -30,7 +30,7 @@ class _DaftarScreenState extends State<DaftarScreen> {
                       (currentIndex);
                     },
                     child: SizedBox(
-                      height: 500,
+                      height: 650,
                       child: CarouselSlider(
                         items: imagesList
                             .map(
@@ -84,25 +84,31 @@ class _DaftarScreenState extends State<DaftarScreen> {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 30,
-              ),
-              ElevatedButton(onPressed:() {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 0, 145, 77),
-                    minimumSize: const Size(400, 40),
-                    shape: const StadiumBorder()
-                  ),
-                  child: const Text('Daftar'),
-                  ),
-                  ElevatedButton(onPressed:() {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 218, 216, 216),
-                    minimumSize: const Size(400, 40),
-                    shape: const StadiumBorder()
+              const SizedBox(height: 20,),
+             Padding(
+               padding: const EdgeInsets.all(1.0),
+               child: ElevatedButton(onPressed:() {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromRGBO(0, 168, 107, 100),
+                      minimumSize: const Size(400, 40),
                     ),
-                  child: const Text('Masuk',style: TextStyle(color: Color.fromARGB(171, 0, 160, 101)),
-                  ),)
+                    child: const Text('Daftar',
+                      style: TextStyle(color: Colors.white),),
+                    ),
+             ),
+              Padding(
+               padding: const EdgeInsets.all(1.0),
+               child: ElevatedButton(onPressed:() {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromRGBO(238, 229, 255, 100),
+                      minimumSize: const Size(400, 40),
+                    ),
+                    child: const Text('Masuk',
+                      style: TextStyle(color: Color.fromRGBO(0, 168, 107, 100),
+                      fontWeight: FontWeight.bold
+                  ),),
+                ),
+             ),
             ],
           ),
         ),
