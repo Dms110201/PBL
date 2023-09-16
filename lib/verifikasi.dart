@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pbl/masuk_screen.dart';
 
 class Verifikasi extends StatefulWidget {
   const Verifikasi({super.key});
@@ -206,7 +207,12 @@ class _VerifikasiState extends State<Verifikasi> {
               ),
                Padding(
                padding: const EdgeInsets.all(20.0),
-               child: ElevatedButton(onPressed:() {},
+               child: ElevatedButton(onPressed:() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Login()),
+                  );
+               },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromRGBO(0, 168, 107, 100),
                       minimumSize: const Size(600, 50),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:pbl/daftar_awal.dart';
+import 'package:pbl/masuk_screen.dart';
 
 class DaftarScreen extends StatefulWidget {
   const DaftarScreen({super.key});
@@ -14,6 +16,10 @@ class _DaftarScreenState extends State<DaftarScreen> {
     {"id": 2, "image_path": 'assets/images/dua.png'},
     {"id": 3, "image_path": 'assets/images/tiga.png'},
   ];
+
+  void gabung() {
+    print('Gabung');
+  }
   final CarouselController carouselController = CarouselController();
   int currentIndex = 0;
   @override
@@ -30,7 +36,7 @@ class _DaftarScreenState extends State<DaftarScreen> {
                       (currentIndex);
                     },
                     child: SizedBox(
-                      height: 650,
+                      height: 630,
                       child: CarouselSlider(
                         items: imagesList
                             .map(
@@ -87,7 +93,12 @@ class _DaftarScreenState extends State<DaftarScreen> {
               const SizedBox(height: 20,),
              Padding(
                padding: const EdgeInsets.all(1.0),
-               child: ElevatedButton(onPressed:() {},
+               child: ElevatedButton(onPressed:() {
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Daftar()),
+                  );
+               },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromRGBO(0, 168, 107, 100),
                       minimumSize: const Size(400, 40),
@@ -98,7 +109,12 @@ class _DaftarScreenState extends State<DaftarScreen> {
              ),
               Padding(
                padding: const EdgeInsets.all(1.0),
-               child: ElevatedButton(onPressed:() {},
+               child: ElevatedButton(onPressed:() {
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Login()),
+                  );
+               },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromRGBO(238, 229, 255, 100),
                       minimumSize: const Size(400, 40),
@@ -106,7 +122,8 @@ class _DaftarScreenState extends State<DaftarScreen> {
                     child: const Text('Masuk',
                       style: TextStyle(color: Color.fromRGBO(0, 168, 107, 100),
                       fontWeight: FontWeight.bold
-                  ),),
+                    ),
+                  ),
                 ),
              ),
             ],
