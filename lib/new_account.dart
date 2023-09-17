@@ -12,18 +12,16 @@ class _AkunBaruState extends State<AkunBaru> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(2, 236, 150, 0.612),
+      backgroundColor: const Color.fromRGBO(2, 236, 150, 0.612),
       body: SafeArea(
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 40,),
-              Container(
-                child: Text("Pemasukan",style: TextStyle(fontSize: 18,
-                fontWeight: FontWeight.w600,color: Colors.white),
-                ),
+              const SizedBox(height: 40,),
+              const Text("Pemasukan",style: TextStyle(fontSize: 18,
+              fontWeight: FontWeight.w600,color: Colors.white),
               ),
-              Row(
+              const Row(
                 children: [
                   Column(
                     children: <Widget>[
@@ -38,7 +36,7 @@ class _AkunBaruState extends State<AkunBaru> {
                   ),
                 ],
               ),
-              Row(
+              const Row(
                 children: [
                   Column(
                     children: <Widget>[
@@ -50,9 +48,9 @@ class _AkunBaruState extends State<AkunBaru> {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(50),
@@ -62,10 +60,10 @@ class _AkunBaruState extends State<AkunBaru> {
                 width: 455,
                 height: 255,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30,vertical: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 15),
                   child: Column(
                     children: [
-                      TextField(
+                      const TextField(
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.grey)),
@@ -75,8 +73,8 @@ class _AkunBaruState extends State<AkunBaru> {
                           fillColor: Colors.white,
                         filled: true,)
                       ),
-                      SizedBox(height: 16,),
-                      TextField(
+                      const SizedBox(height: 16,),
+                      const TextField(
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.grey)),
@@ -86,9 +84,9 @@ class _AkunBaruState extends State<AkunBaru> {
                           fillColor: Colors.white,
                         filled: true,),
                       ),
-                      SizedBox(height: 15,),
+                      const SizedBox(height: 15,),
                         Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 1),
+                            padding: const EdgeInsets.symmetric(horizontal: 1),
                               child: ElevatedButton(onPressed:() {
                                 Navigator.push(
                               context,
