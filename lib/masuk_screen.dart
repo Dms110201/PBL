@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pbl/daftar_awal.dart';
 import 'package:pbl/lupakatasandi.dart';
+import 'package:pbl/setup1.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -51,7 +52,12 @@ class _LoginState extends State<Login> {
               ),
               Padding(
                padding: const EdgeInsets.all(35),
-               child: ElevatedButton(onPressed:() {},
+               child: ElevatedButton(onPressed:() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Setup1()),
+                  );
+               },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromRGBO(0, 168, 107, 100),
                       minimumSize: const Size(600, 50),
