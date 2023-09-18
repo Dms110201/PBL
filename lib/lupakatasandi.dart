@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbl/Color/color.dart';
 import 'package:pbl/email_terkirim.dart';
 
 class LupaKataSandi extends StatefulWidget {
@@ -25,9 +26,9 @@ class _LupaKataSandiState extends State<LupaKataSandi> {
               const SizedBox(height: 90,),
               const Row(
                 children: [
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+                  Padding(padding: EdgeInsets.symmetric(horizontal: 6)),
                   Text("Jangan khawatir.\nMasukkan email Anda dan\nkami akan mengirimkan Anda\ntautan untuk mengatur ulang\nkata sandi Anda.",
-                  style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),)
+                  style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,color: appHitam),)
                     ],
                  ),
                  const SizedBox(height: 17,),
@@ -35,11 +36,11 @@ class _LupaKataSandiState extends State<LupaKataSandi> {
                  child: TextField(
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: BorderSide(color: appGrey2)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: BorderSide(color: appGrey2)),
                         hintText: "Email",
-                    fillColor: Colors.white,
+                    fillColor: appPutih,
                     filled: true,
                   )
                  ),
@@ -54,11 +55,11 @@ class _LupaKataSandiState extends State<LupaKataSandi> {
                   );
                },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromRGBO(0, 168, 107, 100),
+                      backgroundColor: appHijau,
                       minimumSize: const Size(600, 50),
                     ),
                     child: const Text('Lanjutkan',
-                      style: TextStyle(color: Colors.white,
+                      style: TextStyle(color: appPutih,
                       fontWeight: FontWeight.bold,
                       fontSize: 18.0,
                   ),

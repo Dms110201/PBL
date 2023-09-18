@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbl/Color/color.dart';
 import 'package:pbl/verifikasi.dart';
 
 class Daftar extends StatefulWidget {
@@ -14,7 +15,7 @@ class _DaftarState extends State<Daftar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: appPutih,
       body: SafeArea(
         child: Center(
           child: Column(
@@ -34,11 +35,11 @@ class _DaftarState extends State<Daftar> {
                 child: TextField(
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: BorderSide(color: appGrey2)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: BorderSide(color: appGrey2)),
                         hintText: "Nama",
-                    fillColor: Colors.white,
+                    fillColor: appPutih,
                     filled: true,
                   ),
                 ),
@@ -51,11 +52,11 @@ class _DaftarState extends State<Daftar> {
                 child: TextField(
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: BorderSide(color: appGrey2)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: BorderSide(color: appGrey2)),
                         hintText: "Email",
-                    fillColor: Colors.white,
+                    fillColor: appPutih,
                     filled: true,
                   ),
                 ),
@@ -68,11 +69,11 @@ class _DaftarState extends State<Daftar> {
                 child: TextField(
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: BorderSide(color: appGrey2)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: BorderSide(color: appGrey2)),
                         hintText: "Kata Sandi",
-                    fillColor: Colors.white,
+                    fillColor: appPutih,
                     filled: true,
                   ),
                 ),
@@ -90,7 +91,8 @@ class _DaftarState extends State<Daftar> {
                       });
                     },
                   ),
-                  const Text("Dengan mendaftar, Anda menyetujui\nKetentuan Layanan dan Kebijakan Privasi",style: TextStyle(fontSize: 16),
+                  const Text("Dengan mendaftar, Anda menyetujui\nKetentuan Layanan dan Kebijakan Privasi",
+                  style: TextStyle(fontSize: 16,color: appHitam),
                   ),
                 ],
               ),
@@ -104,11 +106,11 @@ class _DaftarState extends State<Daftar> {
                   );
                 },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromRGBO(0, 168, 107, 100),
+                      backgroundColor: appHijau,
                       minimumSize: const Size(600, 50),
                     ),
                     child: const Text('Daftar',
-                      style: TextStyle(color: Colors.white,
+                      style: TextStyle(color: appPutih,
                       fontWeight: FontWeight.bold,
                       fontSize: 18.0,
                   ),),

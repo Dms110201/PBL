@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:pbl/Color/color.dart';
 import 'package:pbl/daftar_awal.dart';
 import 'package:pbl/masuk_screen.dart';
 
@@ -81,8 +82,8 @@ class _DaftarScreenState extends State<DaftarScreen> {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(6),
                                 color: currentIndex == entry.key
-                                    ? Colors.teal
-                                    : Colors.grey),
+                                    ? appHijau
+                                    : appGrey2),
                           ),
                         );
                       }).toList(),
@@ -100,11 +101,11 @@ class _DaftarScreenState extends State<DaftarScreen> {
                   );
                },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromRGBO(0, 168, 107, 100),
+                      backgroundColor: appHijau,
                       minimumSize: const Size(400, 40),
                     ),
                     child: const Text('Daftar',
-                      style: TextStyle(color: Colors.white),),
+                      style: TextStyle(color: appPutih),),
                     ),
              ),
               Padding(
@@ -116,11 +117,11 @@ class _DaftarScreenState extends State<DaftarScreen> {
                   );
                },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromRGBO(238, 229, 255, 100),
+                      backgroundColor: appGrey,
                       minimumSize: const Size(400, 40),
                     ),
                     child: const Text('Masuk',
-                      style: TextStyle(color: Color.fromRGBO(0, 168, 107, 100),
+                      style: TextStyle(color: appHijau,
                       fontWeight: FontWeight.bold
                     ),
                   ),

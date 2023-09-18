@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbl/Color/color.dart';
 import 'package:pbl/masuk_screen.dart';
 
 class AturUlangSandi extends StatefulWidget {
@@ -12,7 +13,7 @@ class _AturUlangSandiState extends State<AturUlangSandi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: appPutih,
       body: SafeArea(
         child: Center(
           child: Column(
@@ -26,11 +27,11 @@ class _AturUlangSandiState extends State<AturUlangSandi> {
               child: TextField(
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: BorderSide(color: appGrey2)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: BorderSide(color: appGrey2)),
                         hintText: "Kata Sandi Baru",
-                    fillColor: Colors.white,
+                    fillColor: appPutih,
                     filled: true,
                   ),
                 ),
@@ -40,11 +41,11 @@ class _AturUlangSandiState extends State<AturUlangSandi> {
               child: TextField(
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: BorderSide(color: appGrey2)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: BorderSide(color: appGrey2)),
                         hintText: "Ketik Ulang Kata Sandi",
-                    fillColor: Colors.white,
+                    fillColor: appPutih,
                     filled: true,
                   ),
                 ),
@@ -63,7 +64,7 @@ class _AturUlangSandiState extends State<AturUlangSandi> {
                       minimumSize: const Size(600, 50),
                     ),
                     child: const Text('Lanjut',
-                      style: TextStyle(color: Colors.white,
+                      style: TextStyle(color: appPutih,
                       fontWeight: FontWeight.bold,
                       fontSize: 18.0,
                   ),

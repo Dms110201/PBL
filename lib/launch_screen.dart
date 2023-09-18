@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbl/Color/color.dart';
 import 'package:pbl/daftar_screen.dart';
 
 
@@ -14,7 +15,7 @@ class LaunchScreen extends StatelessWidget {
         (route) => false);
       });
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 2, 139, 55),
+      backgroundColor: appHijau,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

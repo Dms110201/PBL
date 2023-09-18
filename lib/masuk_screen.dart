@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbl/Color/color.dart';
 import 'package:pbl/daftar_awal.dart';
 import 'package:pbl/lupakatasandi.dart';
 import 'package:pbl/setup1.dart';
@@ -14,7 +15,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: appPutih,
       body: SafeArea(
         child: Center(
           child: Column(
@@ -27,11 +28,11 @@ class _LoginState extends State<Login> {
               child: TextField(
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: BorderSide(color: appGrey2)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: BorderSide(color: appGrey2)),
                         hintText: "Nama",
-                    fillColor: Colors.white,
+                    fillColor: appPutih,
                     filled: true,
                   ),
                 ),
@@ -41,11 +42,11 @@ class _LoginState extends State<Login> {
               child: TextField(
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: BorderSide(color: appGrey2)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
+                        borderSide: BorderSide(color: appGrey2)),
                         hintText: "Kata Sandi",
-                    fillColor: Colors.white,
+                    fillColor: appPutih,
                     filled: true,
                   ),
                 ),
@@ -59,11 +60,11 @@ class _LoginState extends State<Login> {
                   );
                },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromRGBO(0, 168, 107, 100),
+                      backgroundColor: appHijau,
                       minimumSize: const Size(600, 50),
                     ),
                     child: const Text('Masuk',
-                      style: TextStyle(color: Colors.white,
+                      style: TextStyle(color: appPutih,
                       fontWeight: FontWeight.bold,
                       fontSize: 18.0,
                   ),
@@ -77,7 +78,7 @@ class _LoginState extends State<Login> {
                         );
              },
              child: const Text('Lupa Kata Sandi?',
-             style: TextStyle(color: Color.fromRGBO(0, 168, 107, 100),
+             style: TextStyle(color: appHijau,
              fontWeight: FontWeight.w900
              ),
              ),
@@ -87,7 +88,7 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text("Belum punya akun?",
-                  style: TextStyle(color: Color.fromRGBO(145, 145, 159, 100))),
+                  style: TextStyle(color: appGrey2)),
                   TextButton(
                     onPressed: () {
                       Navigator.push(
@@ -96,7 +97,7 @@ class _LoginState extends State<Login> {
                         );
                       },
                     child: const Text("Mendaftar",
-                    style: TextStyle(color: Color.fromRGBO(13, 14, 15, 100),
+                    style: TextStyle(color: appHitam,
                     fontWeight: FontWeight.w900)),
                   ),
                 ],

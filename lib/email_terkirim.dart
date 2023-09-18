@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbl/Color/color.dart';
 import 'package:pbl/aturulangsandi.dart';
 
 class EmailTerkirim extends StatefulWidget {
@@ -12,7 +13,7 @@ class _EmailTerkirimState extends State<EmailTerkirim> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: appPutih,
       body: SafeArea(
         child: Column(
           children: [
@@ -55,11 +56,11 @@ class _EmailTerkirimState extends State<EmailTerkirim> {
                   );
                },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromRGBO(0, 168, 107, 100),
+                      backgroundColor: appHijau,
                       minimumSize: const Size(600, 50),
                     ),
                     child: const Text('Kembali Masuk',
-                      style: TextStyle(color: Colors.white,
+                      style: TextStyle(color: appPutih,
                       fontWeight: FontWeight.bold,
                       fontSize: 18.0,
                   ),
