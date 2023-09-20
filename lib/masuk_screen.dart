@@ -14,17 +14,18 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
+    final mediaQuary = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: appPutih,
       body: SafeArea(
         child: Center(
           child: Column(
             children: [
-              const SizedBox(height: 25,),
-              const Text('Masuk',style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              SizedBox(height: 20),
+               Text('Masuk',style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 164,),
-              const Padding(padding: EdgeInsets.symmetric(horizontal: 16),
+               SizedBox(height: mediaQuary.size.height * 0.1),
+                 Padding(padding: EdgeInsets.symmetric(horizontal: 16),
               child: TextField(
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
@@ -37,7 +38,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-              const SizedBox(height: 24,),
+           SizedBox(height: 20),
               const Padding(padding: EdgeInsets.symmetric(horizontal: 16),
               child: TextField(
                   decoration: InputDecoration(
@@ -51,39 +52,41 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-              Padding(
-               padding: const EdgeInsets.all(35),
-               child: ElevatedButton(onPressed:() {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Setup1()),
-                  );
-               },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: appHijau,
-                      minimumSize: const Size(600, 50),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(30),
+                child: ElevatedButton(onPressed:() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Setup1()),
+                    );
+                },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: appHijau,
+                        minimumSize: const Size(600, 50,),
+                      ),
+                      child: const Text('Masuk',
+                        style: TextStyle(color: appPutih,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
                     ),
-                    child: const Text('Masuk',
-                      style: TextStyle(color: appPutih,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18.0,
                   ),
-                ),
-                ),
-             ),
-             TextButton(onPressed: () {
+                  ),
+                          ),
+              ),
+            TextButton(onPressed: () {
               Navigator.push(
-                         context,
+                        context,
                           MaterialPageRoute(builder: (context) => const LupaKataSandi()),
                         );
-             },
-             child: const Text('Lupa Kata Sandi?',
-             style: TextStyle(color: appHijau,
-             fontWeight: FontWeight.w900
-             ),
-             ),
-             ),
-           const SizedBox(height: 38),
+            },
+            child: const Text('Lupa Kata Sandi?',
+              style: TextStyle(color: appHijau,
+                fontWeight: FontWeight.w900
+                ),
+              ),
+            ),
+           SizedBox(height: mediaQuary.size.height * 0.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -92,7 +95,7 @@ class _LoginState extends State<Login> {
                   TextButton(
                     onPressed: () {
                       Navigator.push(
-                         context,
+                        context,
                           MaterialPageRoute(builder: (context) => const Daftar()),
                         );
                       },

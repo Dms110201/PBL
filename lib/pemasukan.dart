@@ -11,6 +11,7 @@ class Pemasukan extends StatefulWidget {
 class _PemasukanState extends State<Pemasukan> {
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
     return Scaffold(
       body: Stack(
         children: [
@@ -30,7 +31,7 @@ class _PemasukanState extends State<Pemasukan> {
                     ),
                   ],
                 ),
-                SizedBox(height: 407,),
+                SizedBox(height: mediaQuery.size.height * 0.1),
                 Row(
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: 7)),
@@ -51,7 +52,7 @@ class _PemasukanState extends State<Pemasukan> {
                     )
                   ],
                 ),
-                SizedBox(height: 15,),
+                Expanded(child: SizedBox(height: 15,)),
                 Container(
                   decoration: BoxDecoration(
                     color: appPutih,
@@ -60,7 +61,7 @@ class _PemasukanState extends State<Pemasukan> {
                       topLeft: Radius.circular(50),
                     ),
                   ),
-                  height: 260,
+                  height: mediaQuery.size.height * 0.30,
                   child: Center(
                   child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30,vertical: 15),
@@ -87,7 +88,7 @@ class _PemasukanState extends State<Pemasukan> {
                           fillColor: appPutih,
                         filled: true,),
                       ),
-                      const SizedBox(height: 20,),
+                       SizedBox(height: mediaQuery.size.height * 0.0,),
                         Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 1),
                               child: ElevatedButton(onPressed:() {},

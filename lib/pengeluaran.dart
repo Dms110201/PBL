@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pbl/Color/color.dart';
 
-
 class Pengeluaran extends StatefulWidget {
   const Pengeluaran({super.key});
 
@@ -12,6 +11,7 @@ class Pengeluaran extends StatefulWidget {
 class _PengeluaranState extends State<Pengeluaran> {
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
     return Scaffold(
       body: Stack(
         children: [
@@ -31,7 +31,7 @@ class _PengeluaranState extends State<Pengeluaran> {
                     ),
                   ],
                 ),
-                SizedBox(height: 407,),
+                SizedBox(height: mediaQuery.size.height * 0.1),
                 Row(
                   children: [
                     Padding(padding: EdgeInsets.symmetric(horizontal: 7)),
@@ -52,7 +52,7 @@ class _PengeluaranState extends State<Pengeluaran> {
                     )
                   ],
                 ),
-                SizedBox(height: 15,),
+                Expanded(child: SizedBox(height: 15,)),
                 Container(
                   decoration: BoxDecoration(
                     color: appPutih,
@@ -61,7 +61,7 @@ class _PengeluaranState extends State<Pengeluaran> {
                       topLeft: Radius.circular(50),
                     ),
                   ),
-                  height: 260,
+                  height: mediaQuery.size.height * 0.30,
                   child: Center(
                   child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30,vertical: 15),
@@ -73,7 +73,7 @@ class _PengeluaranState extends State<Pengeluaran> {
                             borderSide: BorderSide(color: appGrey2)),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: appGrey)),
-                            hintText: "Jenis Pengeluaran",
+                            hintText: "Jenis Pengluaran",
                           fillColor: appPutih,
                         filled: true,)
                       ),
@@ -88,7 +88,7 @@ class _PengeluaranState extends State<Pengeluaran> {
                           fillColor: appPutih,
                         filled: true,),
                       ),
-                      const SizedBox(height: 20,),
+                       SizedBox(height: mediaQuery.size.height * 0.0,),
                         Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 1),
                               child: ElevatedButton(onPressed:() {},
