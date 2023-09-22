@@ -13,3 +13,4 @@ const appGrey2 = Color(0xffC6C6C6);
 const appKuning2 = Color(0xffFCEED4);
 const appViolet = Color(0xffEEE5FF);
 const appHijau2 = Color(0xff64C19A);
+const appPurplesoft = Color(0xffEEE5FF);

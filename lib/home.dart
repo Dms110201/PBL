@@ -56,7 +56,6 @@ class _HomeState extends State<Home> {
                         Icons.notifications_active,
                         color: appHitam)
                       ),
-
                     ],
                   ),
                         ),

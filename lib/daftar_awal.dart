@@ -11,26 +11,28 @@ class Daftar extends StatefulWidget {
 
 class _DaftarState extends State<Daftar> {
    bool? isChecked = false;
+   
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: appPutih,
       body: SafeArea(
         child: Center(
           child: Column(
             children: [
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: mediaQuery * 0.05
               ),
-              const Text(
+              Text(
                 "Daftar",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(
-                height: 100,
+              SizedBox(
+                height: mediaQuery * 0.12,
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: TextField(
                   decoration: InputDecoration(
@@ -44,10 +46,10 @@ class _DaftarState extends State<Daftar> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: mediaQuery * 0.03,
               ),
-              const Padding(
+               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: TextField(
                   decoration: InputDecoration(
@@ -61,10 +63,10 @@ class _DaftarState extends State<Daftar> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: mediaQuery * 0.03,
               ),
-              const Padding(
+               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: TextField(
                   decoration: InputDecoration(
@@ -78,8 +80,8 @@ class _DaftarState extends State<Daftar> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: mediaQuery * 0.03,
               ),
               Row(
                 children: [
@@ -91,31 +93,47 @@ class _DaftarState extends State<Daftar> {
                       });
                     },
                   ),
-                  const Text("Dengan mendaftar, Anda menyetujui\nKetentuan Layanan dan Kebijakan Privasi",
+                   Text("Dengan mendaftar, Anda menyetujui\nKetentuan Layanan dan Kebijakan Privasi",
                   style: TextStyle(fontSize: 16,color: appHitam),
                   ),
                 ],
               ),
-              Padding(
-               padding: const EdgeInsets.all(20.0),
-               child: ElevatedButton(
-                onPressed:() {
-                  Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Verifikasi()),
-                  );
-                },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: appHijau,
-                      minimumSize: const Size(600, 50),
+              SizedBox(height: mediaQuery * 0.08,
+                child: Padding(
+                  padding:  EdgeInsets.all(9),
+                  child: ElevatedButton(
+                    onPressed:() {
+                      Navigator.push(
+                        context,
+                      MaterialPageRoute(builder: (context) =>  Verifikasi()),
+                    );
+                  },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: appHijau,
+                        minimumSize:  Size(360, 2000),
+                      ),
+                      child: Text('Daftar',
+                        style: TextStyle(color: appPutih,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0),
                     ),
-                    child: const Text('Daftar',
-                      style: TextStyle(color: appPutih,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18.0,
-                  ),),
+                  ),
                 ),
-             ),
+              ),
+              SizedBox(
+                height: mediaQuery * 0.1,
+              ),
+              Center(
+                child: 
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Sudah memiliki akun?", style: TextStyle(color: appGrey2),),
+                    TextButton(onPressed: () {},
+                     child: Text("Gabung",style: TextStyle(color: appHitam),)),
+                  ]
+                )
+              )
             ],
           ),
         ),

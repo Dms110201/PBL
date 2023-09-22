@@ -90,7 +90,7 @@ class _LoginState extends State<Login> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Belum punya akun?",
+                  Text("Belum punya akun?",
                   style: TextStyle(color: appGrey2)),
                   TextButton(
                     onPressed: () {

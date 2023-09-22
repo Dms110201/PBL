@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pbl/launch_screen.dart';
+import 'package:pbl/Laporan%20Keungan/transaksi.dart';
+
 
 
 
@@ -18,6 +19,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-          home: LaunchScreen(),);
+          home: Transaksi(),);
   }
 }
