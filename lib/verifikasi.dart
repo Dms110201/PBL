@@ -18,19 +18,18 @@ class _VerifikasiState extends State<Verifikasi> {
         child: Center(
           child: Column(
             children: [
-              const SizedBox(
+              SizedBox(
                 height: 25,
               ),
-              const Text(
+              Text(
                 "Verifikasi",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 180,
               ),
-              const Center(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
+              Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 17),
                   child: Row(
                     children: [
                       Text(
@@ -43,7 +42,6 @@ class _VerifikasiState extends State<Verifikasi> {
                     ],
                   ),
                 ),
-              ),
               const SizedBox(
                 height: 30,
               ),
