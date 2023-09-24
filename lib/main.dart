@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pbl/Profile/notifikasi.dart';
+import 'package:pbl/Profile/export.dart';
+import 'package:pbl/Profile/exportdata.dart';
+
 
 
 
@@ -19,6 +21,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-          home: Notifikasi());
+          home: Export());
   }
 }

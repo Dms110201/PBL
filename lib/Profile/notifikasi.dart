@@ -10,6 +10,7 @@ class Notifikasi extends StatefulWidget {
 
 class _NotifikasiState extends State<Notifikasi> {
   bool isExpense = true;
+  bool isExpense2 = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,10 +78,10 @@ class _NotifikasiState extends State<Notifikasi> {
               ),
               SizedBox(width: 117,),
               Switch(
-                    value: isExpense,
+                    value: isExpense2,
                     onChanged: (bool value) {
                       setState(() {
-                        isExpense = value;
+                        isExpense2 = value;
                       });
                     },
                     activeColor: appHijau2,
