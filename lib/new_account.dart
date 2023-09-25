@@ -12,56 +12,70 @@ class AkunBaru extends StatefulWidget {
 class _AkunBaruState extends State<AkunBaru> {
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
     return Scaffold(
-      backgroundColor: appHijau,
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(color: appHijau),
+          ),
+          SafeArea(
+              child: Column(
             children: [
-              const SizedBox(height: 20,),
-              const Text("Pemasukan",style: TextStyle(fontSize: 18,
-              fontWeight: FontWeight.w600,color: appPutih),
-              ),
-              const Row(
+              Padding(padding: EdgeInsets.all(15)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Column(
-                    children: <Widget>[
-                      SizedBox(height: 433,),
-                      Padding(padding: EdgeInsets.symmetric(horizontal: 50)),
-                      Column(
+                  Text(
+                    "Pemasukan",
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: appPutih),
+                  ),
+                ],
+              ),
+              SizedBox(height: mediaQuery.size.height * 0.3),
+              Expanded(
+                child: Row(
+                  children: [
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 7)),
+                    Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text("Uangmu",style: TextStyle(color: appPutih,fontSize: 18, fontWeight: FontWeight.w500),),
+                          Text(
+                            "Uangku",
+                            style: TextStyle(
+                                color: appPutih.withOpacity(0.7),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Text(
+                            "Rp.0",
+                            style: TextStyle(
+                                fontSize: 64,
+                                fontWeight: FontWeight.bold,
+                                color: appPutih),
+                          )
                         ],
-                      )
-                    ],
-                  ),
-                ],
-              ),
-              const Row(
-                children: [
-                  Column(
-                    children: <Widget>[
-                      SizedBox(height: 10,),
-                      Padding(padding: EdgeInsets.symmetric(horizontal: 75)),
-                      Text("Rp.0",style: TextStyle(color: appPutih,fontSize: 64, fontWeight: FontWeight.bold),
                       ),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 7),
-              Container(
-                decoration:  BoxDecoration(
-                  color: appPutih,
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(50),
-                    topLeft: Radius.circular(50),
-                  ),
+                    ),
+                  ],
                 ),
-                width: 455,
-                height: 255,
-                child: Padding(
+              ),
+              Expanded(child: SizedBox(height: 15,)),
+                Container(
+                  decoration: BoxDecoration(
+                    color: appPutih,
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(50),
+                      topLeft: Radius.circular(50),
+                    ),
+                  ),
+                  height: mediaQuery.size.height * 0.30,
+                  child: Center(
+                  child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30,vertical: 15),
                   child: Column(
                     children: [
@@ -71,30 +85,29 @@ class _AkunBaruState extends State<AkunBaru> {
                             borderSide: BorderSide(color: appGrey2)),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: appGrey)),
-                            hintText: "Judul",
+                            hintText: "Jenis Pengluaran",
                           fillColor: appPutih,
                         filled: true,)
                       ),
-                      SizedBox(height: 20,),
+                      SizedBox(height: 15,),
                       TextField(
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: appGrey2)),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: appGrey)),
-                            hintText: "Jenis Pemasukan",
+                            hintText: "Deskripsi",
                           fillColor: appPutih,
                         filled: true,),
                       ),
-                      const SizedBox(height: 15,),
+                       SizedBox(height: mediaQuery.size.height * 0.02,),
                         Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 1),
-                              child: ElevatedButton(onPressed:() {
-                                Navigator.push(
-                              context,
-                          MaterialPageRoute(builder: (context) => const SetupSelesai()),
-                        );
-                      },
+                              child: ElevatedButton(onPressed:() {Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SetupSelesai()),
+                          );},
                       style: ElevatedButton.styleFrom(
                               backgroundColor: appHijau,
                           minimumSize: const Size(600, 50),
@@ -103,18 +116,20 @@ class _AkunBaruState extends State<AkunBaru> {
                               style: TextStyle(color: appPutih,
                                   fontWeight: FontWeight.bold,
                               fontSize: 18.0,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
+                   ),
                   ),
                 ),
-              ),
+ 
             ],
-          ),
-        ),
-      )
+          ))
+        ],
+      ),
     );
   }
 }

@@ -1,274 +1,323 @@
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:pbl/Color/color.dart';
 
-class Transaksi extends StatefulWidget {
-  const Transaksi({super.key});
+class transaksi extends StatefulWidget {
+  const transaksi({super.key});
 
   @override
-  State<Transaksi> createState() => _TransaksiState();
+  State<transaksi> createState() => _transaksiState();
 }
 
-class _TransaksiState extends State<Transaksi> {
-  TextEditingController controller = new TextEditingController();
-
-  bool displayMontList = true;
+class _transaksiState extends State<transaksi> {
+  var selectedType;
+  List<String> Option1 = <String>[
+    "Hari",
+    "Bulan",
+    "Tahun",
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(
+        body: Stack(children: [
+      Container(
+        decoration: BoxDecoration(
+          color: appPutih,
+        ),
+      ),
+      SafeArea(
+        child: SingleChildScrollView(
+        child: Column(
+          children: [
+        Padding(padding: EdgeInsets.all(7)),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
+              width: 80,
+              height: 40,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    appPutih,
-                    appPutih.withOpacity(0.100),
-                  ],
-                ),
+                border: Border.all(color: appGrey3, width: 1),
+                borderRadius: BorderRadius.circular(20),
               ),
-            ),
-            SafeArea(
-              child: Column(
-                children: [
-                  Padding(padding: EdgeInsets.all(10.0)),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+              child: DropdownButton(
+                borderRadius: BorderRadius.circular(10),
+                items: Option1.map((value) => DropdownMenuItem(
+                  child: Row(
                     children: [
-                      Icon(Icons.keyboard_arrow_down_outlined,
-                          color: appHijau2),
-                      Text("Bulan", style: TextStyle(fontSize: 18)),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 350,
-                        padding: EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                          color: appPurplesoft,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Lihat laporan keuangan Anda",
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  color: appHijau2,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                            Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 30)),
-                            Icon(Icons.keyboard_arrow_right_outlined,
-                                color: appHijau2),
-                          ],
-                        ),
+                      Text(
+                        value,
+                        style: TextStyle(color: appHitam),
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 10,
+                  value: value,
+                )).toList(),
+                onChanged: (selectedtipeData) {
+                  setState(() {
+                    selectedType = selectedtipeData;
+                  });
+                },
+                value: selectedType,
+                isExpanded: false,
+                hint: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Text(
+                    'pilih',
+                    style: TextStyle(color: appGrey3),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(padding: EdgeInsets.all(8.0)),
-                      Text(
-                        "Hari ini",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  ListView.separated(
-                      separatorBuilder: (context, index) => SizedBox(
-                            height: 10,
+                ),
+                underline: Container(),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        Center(
+          child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: appGrey,
+                elevation: 0,
+                minimumSize: const Size(
+                  600,
+                  50,
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    child: Column(
+                      children: [
+                        const Text(
+                          'Lihat laporan keuangan Anda',
+                          style: TextStyle(
+                            color: appHijau,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18.0,
                           ),
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                      itemCount: 5,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                            contentPadding:
-                                EdgeInsets.symmetric(horizontal: 45),
-                            title: Row(children: [
-                              Container(
-                                width: 30,
-                                height: 50,
-                                margin: EdgeInsets.only(right: 6),
-                                decoration: BoxDecoration(
-                                    color: appPutihKuning,
-                                    borderRadius: BorderRadius.circular(20)),
-                                child: Image.asset('assets/icon/belanja.png'),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          "Belanja",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        Text(
-                                          "- Rp.50.000",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: appRed),
-                                        )
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 12,
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          "Belil bahan makanan",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 13,
-                                              color: appGrey2),
-                                        ),
-                                        Text(
-                                          "10:00 AM",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 13,
-                                              color: appGrey2),
-                                        )
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              )
-                            ]));
-                      }),
-                  SizedBox(
-                    height: 60,
+                        ),
+                      ],
+                    ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(padding: EdgeInsets.all(8.0)),
-                      Text(
-                        "Kemarin",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      )
-                    ],
+                  Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    color: appHijau,
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        Row(
+          children: [
+            Container(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Text(
+                      "Hari ini",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  ListView.separated(
-                      separatorBuilder: (context, index) => SizedBox(
-                            height: 10,
-                          ),
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                      itemCount: 3,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                            contentPadding:
-                                EdgeInsets.symmetric(horizontal: 45),
-                            title: Row(children: [
-                              Container(
-                                width: 60,
-                                height: 70,
-                                margin: EdgeInsets.only(right: 7),
-                                decoration: BoxDecoration(
-                                    color: appPutihKuning,
-                                    borderRadius: BorderRadius.circular(20)),
-                                child: Image.asset('assets/icon/belanja.png'),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          "Gajian",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        Text(
-                                          "+ 4.000.000",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: appHijau2),
-                                        )
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 12,
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          "Belil bahan makanan",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 13,
-                                              color: appGrey2),
-                                        ),
-                                        Text(
-                                          "04:30 pm",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 13,
-                                              color: appGrey2),
-                                        )
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              )
-                            ]));
-                      }),
                 ],
               ),
             ),
           ],
         ),
-        bottomNavigationBar: ConvexAppBar(
-          backgroundColor: appPutih,
-          color: appGrey2,
-          activeColor: appHijau,
-          items: [
-            TabItem(
-              icon: Icons.home,
-              title: 'Utama',
+        SizedBox(height: 15),
+        ListView.separated(
+          separatorBuilder: (context, index) => SizedBox(
+            height: 15,
+          ),
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return ListTile(
+              contentPadding: EdgeInsets.symmetric(horizontal: 30),
+              title: Row(
+                children: [
+                  Container(
+                    width: 50,
+                    height: 60,
+                    margin: EdgeInsets.only(right: 7),
+                    decoration: BoxDecoration(
+                      color: appPutihKuning,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Image.asset('assets/icon/belanja.png'),
+                  ),
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Belanja",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "- Rp.100.000",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: appRed,
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 12,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Belil bahan makanan",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 13,
+                                color: appGrey2,
+                              ),
+                            ),
+                            Text(
+                              "10:00 AM",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 13,
+                                color: appGrey2,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+        SizedBox(height: 20),
+        Row(
+          children: [
+            Container(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Text(
+                      "Kemarin",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            TabItem(icon: Icons.map, title: 'Transaction'),
-            TabItem(icon: Icons.add, title: 'Add'),
-            TabItem(icon: Icons.message, title: 'Anggaran'),
-            TabItem(icon: Icons.people, title: 'Profile'),
           ],
-          onTap: (int i) => print('click index=$i'),
-        ));
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        ListView.separated(
+          separatorBuilder: (context, index) => SizedBox(
+            height: 15,
+          ),
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return ListTile(
+              contentPadding: EdgeInsets.symmetric(horizontal: 30),
+              title: Row(
+                children: [
+                  Container(
+                    width: 50,
+                    height: 60,
+                    margin: EdgeInsets.only(right: 7),
+                    decoration: BoxDecoration(
+                      color: appPutihKuning,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Image.asset('assets/icon/belanja.png'),
+                  ),
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Belanja",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "- Rp.100.000",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: appRed,
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 12,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Belil bahan makanan",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 13,
+                                color: appGrey2,
+                              ),
+                            ),
+                            Text(
+                              "10:00 AM",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 13,
+                                color: appGrey2,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+          ],
+        ),
+      ),
+      )
+    ]));
   }
 }

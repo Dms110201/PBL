@@ -21,10 +21,12 @@ class _DaftarScreenState extends State<DaftarScreen> {
   void gabung() {
     print('Gabung');
   }
+
   final CarouselController carouselController = CarouselController();
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
     return Scaffold(
       body: SafeArea(
         child: Center(
@@ -37,7 +39,7 @@ class _DaftarScreenState extends State<DaftarScreen> {
                       (currentIndex);
                     },
                     child: SizedBox(
-                      height: 630,
+                      height: mediaQuery.size.height * 0.7,
                       child: CarouselSlider(
                         items: imagesList
                             .map(
@@ -91,42 +93,51 @@ class _DaftarScreenState extends State<DaftarScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 20,),
-             Padding(
-               padding: const EdgeInsets.all(1.0),
-               child: ElevatedButton(onPressed:() {
-                 Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Daftar()),
-                  );
-               },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: appHijau,
-                      minimumSize: const Size(400, 40),
-                    ),
-                    child: const Text('Daftar',
-                      style: TextStyle(color: appPutih),),
-                    ),
-             ),
+              SizedBox(
+                height: mediaQuery.size.height * 0.10,
+              ),
               Padding(
-               padding: const EdgeInsets.all(1.0),
-               child: ElevatedButton(onPressed:() {
-                 Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Login()),
-                  );
-               },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: appGrey,
-                      minimumSize: const Size(400, 40),
-                    ),
-                    child: const Text('Masuk',
-                      style: TextStyle(color: appHijau,
-                      fontWeight: FontWeight.bold
-                    ),
+                padding: const EdgeInsets.all(1.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Daftar()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: appHijau,
+                      minimumSize: const Size(400, 50),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10))),
+                  child: const Text(
+                    'Daftar',
+                    style: TextStyle(color: appPutih),
                   ),
                 ),
-             ),
+              ),
+               SizedBox(height: mediaQuery.size.height * 0.01,),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Login()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: appGrey,
+                      minimumSize: const Size(400, 50),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10))),
+                  child: const Text(
+                    'Masuk',
+                    style:
+                        TextStyle(color: appHijau, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

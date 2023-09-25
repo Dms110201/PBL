@@ -12,18 +12,20 @@ class EmailTerkirim extends StatefulWidget {
 class _EmailTerkirimState extends State<EmailTerkirim> {
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: appPutih,
       body: SafeArea(
         child: Column(
           children: [
-            Padding(padding: EdgeInsets.symmetric(horizontal: 200, vertical: 5)),
+            Padding(
+                padding: EdgeInsets.symmetric(horizontal: 200, vertical: 5)),
             Image.asset(
               'assets/images/surat.png',
               height: 350,
               width: 400,
             ),
-            SizedBox(height: 18),
+            SizedBox(height: mediaQuery.size.height * 0.02),
             Center(
               child: Column(
                 children: const [
@@ -46,27 +48,32 @@ class _EmailTerkirimState extends State<EmailTerkirim> {
                 ],
               ),
             ),
-             const SizedBox(height: 16),
-                Padding(
-               padding: const EdgeInsets.all(17),
-               child: ElevatedButton(onPressed:() {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AturUlangSandi()),
+            SizedBox(height: mediaQuery.size.height * 0.02),
+            Padding(
+              padding: const EdgeInsets.all(17),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AturUlangSandi()),
                   );
-               },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: appHijau,
-                      minimumSize: const Size(600, 50),
-                    ),
-                    child: const Text('Kembali Masuk',
-                      style: TextStyle(color: appPutih,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18.0,
+                },
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: appHijau,
+                    minimumSize: const Size(600, 50),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10))),
+                child: const Text(
+                  'Kembali Masuk',
+                  style: TextStyle(
+                    color: appPutih,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18.0,
                   ),
                 ),
-                ),
-             ),
+              ),
+            ),
           ],
         ),
       ),

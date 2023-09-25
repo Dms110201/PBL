@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CircleAvatar(),
                       Row(

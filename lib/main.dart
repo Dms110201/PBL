@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pbl/Profile/export.dart';
-import 'package:pbl/Profile/exportdata.dart';
-
+import 'package:pbl/new_account.dart';
 
 
 
@@ -21,6 +19,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-          home: Export());
+          home: AkunBaru());
   }
 }
