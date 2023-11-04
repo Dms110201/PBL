@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pbl/new_account.dart';
+import 'package:pbl/BottomNav/bottomnav.dart';
 
 
 
@@ -19,6 +19,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-          home: AkunBaru());
+          home: BottomNav());
   }
 }

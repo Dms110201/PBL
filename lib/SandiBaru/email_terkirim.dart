@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pbl/Color/color.dart';
-import 'package:pbl/aturulangsandi.dart';
+import 'package:pbl/SandiBaru/aturulangsandi.dart';
 
 class EmailTerkirim extends StatefulWidget {
   const EmailTerkirim({super.key});

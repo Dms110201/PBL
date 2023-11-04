@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pbl/Color/color.dart';
-import 'package:pbl/verifikasi.dart';
+import 'package:pbl/masuk_screen.dart';
+import 'package:pbl/AkunBaru/verifikasi.dart';
 
 class Daftar extends StatefulWidget {
   const Daftar({super.key});
@@ -17,7 +18,7 @@ class _DaftarState extends State<Daftar> {
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: appPutih,
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Center(
           child: Column(
             children: [
@@ -26,7 +27,7 @@ class _DaftarState extends State<Daftar> {
                 "Daftar",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: mediaQuery.size.height * 0.1),
+              SingleChildScrollView(child: SizedBox(height: mediaQuery.size.height * 0.1)),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: TextField(
@@ -41,7 +42,7 @@ class _DaftarState extends State<Daftar> {
                   ),
                 ),
               ),
-              SizedBox(height: mediaQuery.size.height * 0.03),
+              SizedBox(height: mediaQuery.size.height * 0.02),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: TextField(
@@ -89,7 +90,7 @@ class _DaftarState extends State<Daftar> {
                 ],
               ),
               SizedBox(
-                height: mediaQuery.size.height * 0.02,
+                height: mediaQuery.size.height * 0.01,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -132,7 +133,13 @@ class _DaftarState extends State<Daftar> {
                       style: TextStyle(color: appGrey2, fontSize: 16),
                     ),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Login()),
+                          );
+                        },
                         child: Text(
                           "Gabung",
                           style: TextStyle(color: appHitam, fontSize: 16),

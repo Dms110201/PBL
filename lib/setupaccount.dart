@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:pbl/Color/color.dart';
-import 'package:pbl/new_account.dart';
+import 'package:pbl/AkunBaru/new_account.dart';
 
-class Setup1 extends StatefulWidget {
-  const Setup1({super.key});
+class SetupAccount extends StatefulWidget {
+  const SetupAccount({super.key});
 
   @override
-  State<Setup1> createState() => _Setup1State();
+  State<SetupAccount> createState() => _SetupAccountState();
 }
 
-class _Setup1State extends State<Setup1> {
+class _SetupAccountState extends State<SetupAccount> {
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context);
+  final mediaQuery = MediaQuery.of(context);
     return Scaffold(
       body: SafeArea(
         child: Center(

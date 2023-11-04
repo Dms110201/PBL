@@ -134,7 +134,7 @@ class _ExportDataState extends State<ExportData> {
                     onChanged: print,
                   ),
                 ),
-                SizedBox(height: mediaQuery.size.height * 0.35),
+                SizedBox(height: mediaQuery.size.height * 0.15),
                 ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(

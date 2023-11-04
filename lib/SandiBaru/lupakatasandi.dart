@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pbl/Color/color.dart';
-import 'package:pbl/email_terkirim.dart';
+import 'package:pbl/SandiBaru/email_terkirim.dart';
 
 class LupaKataSandi extends StatefulWidget {
   const LupaKataSandi({super.key});

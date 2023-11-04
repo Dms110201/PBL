@@ -35,36 +35,34 @@ class _AkunBaruState extends State<AkunBaru> {
                   ),
                 ],
               ),
-              SizedBox(height: mediaQuery.size.height * 0.3),
-              Expanded(
-                child: Row(
-                  children: [
-                    Padding(padding: EdgeInsets.symmetric(horizontal: 7)),
-                    Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            "Uangku",
-                            style: TextStyle(
-                                color: appPutih.withOpacity(0.7),
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400),
-                          ),
-                          Text(
-                            "Rp.0",
-                            style: TextStyle(
-                                fontSize: 64,
-                                fontWeight: FontWeight.bold,
-                                color: appPutih),
-                          )
-                        ],
-                      ),
+              Expanded(child: SizedBox(height: mediaQuery.size.height * 0.5)),
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.symmetric(horizontal: 7)),
+                  Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Uangku",
+                          style: TextStyle(
+                              color: appPutih.withOpacity(0.7),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400),
+                        ),
+                        Text(
+                          "Rp.0",
+                          style: TextStyle(
+                              fontSize: 64,
+                              fontWeight: FontWeight.bold,
+                              color: appPutih),
+                        )
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Expanded(child: SizedBox(height: 15,)),
+              SizedBox(height: 2,),
                 Container(
                   decoration: BoxDecoration(
                     color: appPutih,

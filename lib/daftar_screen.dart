@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:pbl/Color/color.dart';
-import 'package:pbl/daftar_awal.dart';
+import 'package:pbl/AkunBaru/daftar_awal.dart';
 import 'package:pbl/masuk_screen.dart';
 
 class DaftarScreen extends StatefulWidget {
