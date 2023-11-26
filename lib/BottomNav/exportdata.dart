@@ -56,7 +56,6 @@ class _ExportDataState extends State<ExportData> {
                   child: DropdownSearch<String>(
                     popupProps: PopupProps.menu(
                       showSelectedItems: true,
-                      disabledItemFn: (String s) => s.startsWith('I'),
                     ),
                     items: ["Satu Bulan ", 'Satu Tahun', "Semuanya"],
                     dropdownDecoratorProps: DropDownDecoratorProps(
@@ -88,7 +87,6 @@ class _ExportDataState extends State<ExportData> {
                   child: DropdownSearch<String>(
                     popupProps: PopupProps.menu(
                       showSelectedItems: true,
-                      disabledItemFn: (String s) => s.startsWith('I'),
                     ),
                     items: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
                     dropdownDecoratorProps: DropDownDecoratorProps(
@@ -120,9 +118,8 @@ class _ExportDataState extends State<ExportData> {
                   child: DropdownSearch<String>(
                     popupProps: PopupProps.menu(
                       showSelectedItems: true,
-                      disabledItemFn: (String s) => s.startsWith('I'),
                     ),
-                    items: ["xlsx", "xls", "csv", "doc", "docx", "pdf"],
+                    items: ["xlsx", "xls", "pdf"],
                     dropdownDecoratorProps: DropDownDecoratorProps(
                       dropdownSearchDecoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -134,7 +131,7 @@ class _ExportDataState extends State<ExportData> {
                     onChanged: print,
                   ),
                 ),
-                SizedBox(height: mediaQuery.size.height * 0.15),
+                SizedBox(height: mediaQuery.size.height * 0.1),
                 ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(

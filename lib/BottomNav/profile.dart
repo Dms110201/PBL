@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pbl/BottomNav/bottomnav.dart';
 import 'package:pbl/Color/color.dart';
+import 'package:pbl/Login/masuk_screen.dart';
 import 'package:pbl/Profile/settings.dart';
 
 class Profile extends StatefulWidget {
@@ -164,7 +165,7 @@ class _ProfileState extends State<Profile> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => BottomNav(),
+                        builder: (context) => Login(),
                       ),
                     );
                   },
