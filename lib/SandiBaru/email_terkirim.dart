@@ -15,9 +15,12 @@ class _EmailTerkirimState extends State<EmailTerkirim> {
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: appPutih,
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(
+              height: mediaQuery.size.height * 0.05,
+            ),
             Padding(
                 padding: EdgeInsets.symmetric(horizontal: 200, vertical: 5)),
             Image.asset(

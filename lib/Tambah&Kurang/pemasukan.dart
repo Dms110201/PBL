@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:pbl/BottomNav/bottomnav.dart';
 import 'package:pbl/Color/color.dart';
 
-class Pengeluaran extends StatefulWidget {
-  const Pengeluaran({super.key});
+class Pemasukan extends StatefulWidget {
+  const Pemasukan({super.key});
 
   @override
-  State<Pengeluaran> createState() => _PengeluaranState();
+  State<Pemasukan> createState() => _PemasukanState();
 }
 
-class _PengeluaranState extends State<Pengeluaran> {
+class _PemasukanState extends State<Pemasukan> {
+  TextEditingController controller = TextEditingController(text: "Rp");
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -17,7 +19,7 @@ class _PengeluaranState extends State<Pengeluaran> {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: appRed
+              color: appHijau
             ),
           ),
           SafeArea(
@@ -27,31 +29,39 @@ class _PengeluaranState extends State<Pengeluaran> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Pengeluaran",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: appPutih),
+                    Text("Pemasukan",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: appPutih),
                     ),
                   ],
                 ),
-                SizedBox(height: mediaQuery.size.height * 0.1),
-                Row(
+                SizedBox(height: mediaQuery.size.height * 0.02),
+                 Container(
+                margin: EdgeInsets.all(20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Padding(padding: EdgeInsets.symmetric(horizontal: 7)),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text("Berapa Banyak ?",
-                                style: TextStyle(
-                                color: appPutih.withOpacity(0.7),
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400),),
-                          SizedBox(height: 10,),
-                              Text("Rp.0",style: TextStyle(
-                                color: appPutih,
-                                fontSize: 67,
-                                fontWeight: FontWeight.w500),),
-                        ],
-                    )
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: "Dapet Berapa ?",
+                        labelStyle: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w500,
+                          color: appPutih.withOpacity(0.7),
+                        ),
+                        hintText: "Rp.0",
+                        hintStyle: TextStyle(
+                          fontSize: 60,
+                          fontWeight: FontWeight.w500,
+                          color: appGrey,
+                        ),
+                        border: InputBorder.none,
+                        floatingLabelBehavior: FloatingLabelBehavior.always,
+                      ),
+                      controller: controller,
+                      style: TextStyle(color: appPutih, fontSize: 60),
+                    ),
                   ],
                 ),
+              ),
                 Expanded(child: SizedBox(height: 15,)),
                 Container(
                   decoration: BoxDecoration(
@@ -73,7 +83,7 @@ class _PengeluaranState extends State<Pengeluaran> {
                             borderSide: BorderSide(color: appGrey2)),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: appGrey)),
-                            hintText: "Jenis Pengluaran",
+                            hintText: "Jenis Pemasukan",
                           fillColor: appPutih,
                         filled: true,)
                       ),
@@ -88,10 +98,14 @@ class _PengeluaranState extends State<Pengeluaran> {
                           fillColor: appPutih,
                         filled: true,),
                       ),
-                       SizedBox(height: mediaQuery.size.height * 0.0,),
+                       SizedBox(height: mediaQuery.size.height * 0.02,),
                         Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 1),
-                              child: ElevatedButton(onPressed:() {},
+                              child: ElevatedButton(onPressed:() {Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BottomNav()),
+                          );},
                       style: ElevatedButton.styleFrom(
                               backgroundColor: appHijau,
                           minimumSize: const Size(600, 50),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pbl/Color/color.dart';
-import 'package:pbl/succses_screen.dart';
+import 'package:pbl/Login/succses_screen.dart';
 
 class AkunBaru extends StatefulWidget {
   const AkunBaru({super.key});
@@ -10,6 +10,7 @@ class AkunBaru extends StatefulWidget {
 }
 
 class _AkunBaruState extends State<AkunBaru> {
+  TextEditingController controller = TextEditingController(text: "Rp");
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -36,31 +37,33 @@ class _AkunBaruState extends State<AkunBaru> {
                 ],
               ),
               Expanded(child: SizedBox(height: mediaQuery.size.height * 0.5)),
-              Row(
-                children: [
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 7)),
-                  Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          "Uangku",
-                          style: TextStyle(
-                              color: appPutih.withOpacity(0.7),
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400),
+              Container(
+                margin: EdgeInsets.all(20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: "Uangku",
+                        labelStyle: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w500,
+                          color: appPutih.withOpacity(0.7),
                         ),
-                        Text(
-                          "Rp.0",
-                          style: TextStyle(
-                              fontSize: 64,
-                              fontWeight: FontWeight.bold,
-                              color: appPutih),
-                        )
-                      ],
+                        hintText: "Rp.0",
+                        hintStyle: TextStyle(
+                          fontSize: 60,
+                          fontWeight: FontWeight.w500,
+                          color: appGrey,
+                        ),
+                        border: InputBorder.none,
+                        floatingLabelBehavior: FloatingLabelBehavior.always,
+                      ),
+                      controller: controller,
+                      style: TextStyle(color: appPutih, fontSize: 60),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               SizedBox(height: 2,),
                 Container(
@@ -83,7 +86,7 @@ class _AkunBaruState extends State<AkunBaru> {
                             borderSide: BorderSide(color: appGrey2)),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: appGrey)),
-                            hintText: "Jenis Pengluaran",
+                            hintText: "Judul",
                           fillColor: appPutih,
                         filled: true,)
                       ),
@@ -94,7 +97,7 @@ class _AkunBaruState extends State<AkunBaru> {
                             borderSide: BorderSide(color: appGrey2)),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: appGrey)),
-                            hintText: "Deskripsi",
+                            hintText: "Jenis Pengeluaran",
                           fillColor: appPutih,
                         filled: true,),
                       ),

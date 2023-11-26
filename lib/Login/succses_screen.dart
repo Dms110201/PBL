@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pbl/BottomNav/bottomnav.dart';
+import 'package:pbl/Color/color.dart';
 
 class SetupSelesai extends StatefulWidget {
   const SetupSelesai({super.key});
@@ -19,7 +20,7 @@ class _SetupSelesaiState extends State<SetupSelesai> {
           (route) => false);
     });
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: appPutih,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

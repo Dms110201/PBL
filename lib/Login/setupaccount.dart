@@ -14,6 +14,7 @@ class _SetupAccountState extends State<SetupAccount> {
   Widget build(BuildContext context) {
   final mediaQuery = MediaQuery.of(context);
     return Scaffold(
+      backgroundColor: appPutih,
       body: SafeArea(
         child: Center(
           child: Column(
@@ -40,7 +41,7 @@ class _SetupAccountState extends State<SetupAccount> {
                         Text(
                           "Masukan Jumlah Uang Mu",
                           style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 17,
                               color: appHitam,
                               fontWeight: FontWeight.w600),
                         )
@@ -62,14 +63,14 @@ class _SetupAccountState extends State<SetupAccount> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromRGBO(0, 168, 107, 100),
+                      backgroundColor: appHijau,
                       minimumSize: const Size(370, 50),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10))),
                   child: const Text(
                     'Ayo',
                     style: TextStyle(
-                      color: Colors.white,
+                      color:appPutih,
                       fontWeight: FontWeight.bold,
                       fontSize: 18.0,
                     ),

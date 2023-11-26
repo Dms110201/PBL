@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:pbl/Color/color.dart';
 import 'package:pbl/AkunBaru/daftar_awal.dart';
-import 'package:pbl/masuk_screen.dart';
+import 'package:pbl/Login/masuk_screen.dart';
 
 class DaftarScreen extends StatefulWidget {
   const DaftarScreen({super.key});
@@ -18,16 +18,13 @@ class _DaftarScreenState extends State<DaftarScreen> {
     {"id": 3, "image_path": 'assets/images/tiga.png'},
   ];
 
-  void gabung() {
-    print('Gabung');
-  }
-
   final CarouselController carouselController = CarouselController();
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
+      backgroundColor: appPutih,
       body: SafeArea(
         child: Center(
           child: Column(
@@ -79,7 +76,7 @@ class _DaftarScreenState extends State<DaftarScreen> {
                             width: currentIndex == entry.key ? 10 : 10,
                             height: 10.0,
                             margin: const EdgeInsets.symmetric(
-                              horizontal: 2.0,
+                              horizontal: 5.0,
                             ),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(6),

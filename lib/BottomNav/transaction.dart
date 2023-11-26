@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pbl/Color/color.dart';
-import 'package:pbl/Laporan%20Keungan/linechart.dart';
+import 'package:pbl/Laporan%20Keungan/report_pengeluaran.dart';
 
 class transaction extends StatefulWidget {
   const transaction({super.key});
@@ -83,7 +83,7 @@ class _transactionState extends State<transaction> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => LineChart()),
+                        MaterialPageRoute(builder: (context) => ReportPengeluaran()),
                       );
                     },
                     style: ElevatedButton.styleFrom(

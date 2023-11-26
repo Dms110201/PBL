@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:pbl/masuk_screen.dart';
+import 'package:pbl/Color/color.dart';
+import 'package:pbl/Login/masuk_screen.dart';
 
 class Verifikasi extends StatefulWidget {
   const Verifikasi({super.key});
@@ -13,13 +14,14 @@ class _VerifikasiState extends State<Verifikasi> {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
     return Scaffold(
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Center(
           child: Column(
             children: [
               SizedBox(
-                height: 25,
+                height: mediaQuery.size.height * 0.04,
               ),
               Text(
                 "Verifikasi",
@@ -188,10 +190,10 @@ class _VerifikasiState extends State<Verifikasi> {
                       Row(
                         children: [
                           Text('Saya tidak menerima kodenya? Kirim lagi',
-                          style: TextStyle(color: Colors.green,
+                          style: TextStyle(color: appHijau,
                           fontWeight: FontWeight.bold, fontSize: 16,
                           decoration: TextDecoration.underline,
-                          decorationColor: Colors.green,
+                          decorationColor: appHijau,
                           decorationThickness: 3,
                           decorationStyle: TextDecorationStyle.solid),)
                         ],
@@ -212,7 +214,7 @@ class _VerifikasiState extends State<Verifikasi> {
                   );
                },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromRGBO(0, 168, 107, 100),
+                      backgroundColor: appHijau,
                       minimumSize: const Size(600, 50),
                     ),
                     child: const Text('Verifikasi',

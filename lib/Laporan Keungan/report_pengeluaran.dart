@@ -47,6 +47,7 @@ class _ReportPengeluaranState extends State<ReportPengeluaran> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Stack(
           children: [
@@ -188,7 +189,7 @@ class _ReportPengeluaranState extends State<ReportPengeluaran> {
                                     series: <ChartSeries>[
                                       SplineSeries<SalesData, DateTime>(
                                         dataSource: chartData,
-                                        color: Colors.red,
+                                        color: appRed,
                                         width: 5,
                                         xValueMapper: (SalesData sales, _) =>
                                             sales.year,
@@ -214,7 +215,7 @@ class _ReportPengeluaranState extends State<ReportPengeluaran> {
                             colorOff: appHijau,
                             iconOn: Icons.arrow_upward_rounded,
                             iconOff: Icons.arrow_downward_rounded,
-                            animationDuration: Duration(milliseconds: 200),
+                            animationDuration: Duration(milliseconds: 500),
                             onChanged: (bool state) {
                               print('turned ${(state) ? 'on' : 'off'}');
                             },
@@ -233,8 +234,8 @@ class _ReportPengeluaranState extends State<ReportPengeluaran> {
                               height: 40,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                color: Colors.white,
-                                border: Border.all(color: Colors.grey, width: 1),
+                                color: appPutih,
+                                border: Border.all(color: appGrey, width: 1),
                               ),
                               child: DropdownButton(
                                 borderRadius: BorderRadius.circular(10),
@@ -244,7 +245,7 @@ class _ReportPengeluaranState extends State<ReportPengeluaran> {
                                       children: [
                                         Text(
                                           value,
-                                          style: TextStyle(color: Colors.black),
+                                          style: TextStyle(color: appHitam),
                                         ),
                                       ],
                                     ),
@@ -260,10 +261,10 @@ class _ReportPengeluaranState extends State<ReportPengeluaran> {
                                 isExpanded: false,
                                 hint: Padding(
                                   padding:
-                                      const EdgeInsets.symmetric(horizontal: 10),
+                                      const EdgeInsets.symmetric(horizontal: 20),
                                   child: Text(
                                     'pilih',
-                                    style: TextStyle(color: Colors.grey),
+                                    style: TextStyle(color: appGrey2,fontSize: 20),
                                   ),
                                 ),
                                 underline: Container(),
@@ -294,7 +295,7 @@ class _ReportPengeluaranState extends State<ReportPengeluaran> {
                                     height: 50,
                                     margin: EdgeInsets.only(right: 6),
                                     decoration: BoxDecoration(
-                                      color: Colors.yellow,
+                                      color: appKuning2,
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: Image.asset('assets/icon/belanja.png'),
@@ -317,7 +318,7 @@ class _ReportPengeluaranState extends State<ReportPengeluaran> {
                                               "- Rp.50.000",
                                               style: TextStyle(
                                                 fontWeight: FontWeight.bold,
-                                                color: Colors.red,
+                                                color: appRed
                                               ),
                                             ),
                                           ],

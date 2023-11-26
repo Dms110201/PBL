@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pbl/Color/color.dart';
-import 'package:pbl/masuk_screen.dart';
+import 'package:pbl/Login/masuk_screen.dart';
 import 'package:pbl/AkunBaru/verifikasi.dart';
 
 class Daftar extends StatefulWidget {
@@ -22,12 +22,15 @@ class _DaftarState extends State<Daftar> {
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 20),
+              SizedBox(
+                height: mediaQuery.size.height * 0.05,
+              ),
               Text(
                 "Daftar",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              SingleChildScrollView(child: SizedBox(height: mediaQuery.size.height * 0.1)),
+              SingleChildScrollView(
+                  child: SizedBox(height: mediaQuery.size.height * 0.1)),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: TextField(
@@ -136,8 +139,7 @@ class _DaftarState extends State<Daftar> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => Login()),
+                            MaterialPageRoute(builder: (context) => Login()),
                           );
                         },
                         child: Text(
