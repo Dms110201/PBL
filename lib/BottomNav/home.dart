@@ -12,6 +12,22 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  var selectedType;
+  List<String> Option1 = <String>[
+    "Januari",
+    "Februari",
+    "Maret",
+    "April",
+    "Mei",
+    "Juni",
+    "Juli",
+    "Agustus",
+    "September",
+    "Oktober",
+    "November",
+    "Desember",
+  ];
+
   final List<SalesData> chartData = [
     SalesData(DateTime(2010), 100),
     SalesData(DateTime(2011), 300),
@@ -20,6 +36,8 @@ class _HomeState extends State<Home> {
     SalesData(DateTime(2014), 500),
     SalesData(DateTime(2015), 400),
   ];
+
+  String SelectedDay = "Hari ini";
 
   @override
   Widget build(BuildContext context) {
@@ -45,22 +63,61 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.all(15.0),
                   child: Row(
                     children: [
-                      CircleAvatar(),
+                      Container(
+                        width: 50,
+                        height: 60,
+                        child: Image.asset(
+                          'assets/icon/Rectangle 9.png',
+                        ),
+                      ),
                       Expanded(
                         child: Row(
                           children: [
-                            SizedBox(width: 110),
-                            Center(
-                              child: Icon(
-                                Icons.keyboard_arrow_down_outlined,
-                                color: appHitam,
-                              ),
-                            ),
-                            SizedBox(width: 5),
-                            Text(
-                              "Oktober",
-                              style: TextStyle(color: appHitam),
-                            ),
+                            SizedBox(width: 85),
+                            Row(
+                              children: [
+                                Container(
+                                  width: 110,
+                                  height: 40,
+                                  child: Center(
+                                    child: DropdownButton(
+                                      items: Option1.map((value) {
+                                        return DropdownMenuItem(
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                value,
+                                                style:
+                                                    TextStyle(color: appHitam),
+                                              ),
+                                            ],
+                                          ),
+                                          value: value,
+                                        );
+                                      }).toList(),
+                                      onChanged: (selectedtipeData) {
+                                        setState(() {
+                                          selectedType = selectedtipeData;
+                                        });
+                                      },
+                                      value: selectedType,
+                                      isExpanded: false,
+                                      hint: Center(
+                                        child: Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 7),
+                                          child: Text(
+                                            "pilih",
+                                            style: TextStyle(color: appGrey2),
+                                          ),
+                                        ),
+                                      ),
+                                      underline: Container(),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            )
                           ],
                         ),
                       ),
@@ -234,60 +291,134 @@ class _HomeState extends State<Home> {
                       SizedBox(
                         height: 5,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      Column(
                         children: [
-                          Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 10),
-                              decoration: BoxDecoration(
-                                  color: appKuning2,
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: Text(
-                                "Hari ini",
-                                style: TextStyle(
+                          Row(
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  updateSelectedDay("hari ini");
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 20, vertical: 10),
+                                  decoration: BoxDecoration(
+                                    color: SelectedDay == "hari ini"
+                                        ? appKuning2
+                                        : appGrey,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Text(
+                                    "Hari ini",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      color: SelectedDay == "hari ini"
+                                          ? appKuning
+                                          : appGrey2,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                  width: 10),
+                              GestureDetector(
+                                onTap: () {
+                                  updateSelectedDay("Minggu");
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 20, vertical: 10),
+                                  decoration: BoxDecoration(
+                                    color: SelectedDay == "Minggu"
+                                        ? appKuning2
+                                        : appGrey,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Text(
+                                    "Minggu",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w400,
+                                      color: SelectedDay == "Minggu"
+                                          ? appKuning
+                                          : appGrey2,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                  width: 10),
+                              GestureDetector(
+                                onTap: () {
+                                  updateSelectedDay("Senin");
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 20, vertical: 10),
+                                  decoration: BoxDecoration(
+                                    color: SelectedDay == "Senin"
+                                        ? appKuning2
+                                        : appGrey,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Text(
+                                    "Senin",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w400,
+                                      color: SelectedDay == "Senin"
+                                          ? appKuning
+                                          : appGrey2,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                  width: 10),
+                              GestureDetector(
+                                onTap: () {
+                                  updateSelectedDay("Selasa");
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 20, vertical: 10),
+                                  decoration: BoxDecoration(
+                                    color: SelectedDay == "Selasa"
+                                        ? appKuning2
+                                        : appGrey,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Text(
+                                    "Selasa",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w400,
+                                      color: SelectedDay == "Selasa"
+                                          ? appKuning
+                                          : appGrey2,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 5),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(7.0),
+                                child: Text(
+                                  "Transaksi Terbaru",
+                                  style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w600,
-                                    color: appKuning),
-                              )),
-                          Text(
-                            "Minggu",
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                                color: appGrey2),
-                          ),
-                          Text(
-                            "Senin",
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                                color: appGrey2),
-                          ),
-                          Text(
-                            "Selasa",
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                                color: appGrey2),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(7.0),
-                            child: Text(
-                              "Transaksi Terbaru",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                  color: appHitam),
-                            ),
+                                    color: appHitam,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
@@ -304,7 +435,7 @@ class _HomeState extends State<Home> {
                         itemBuilder: (context, index) {
                           return ListTile(
                             contentPadding:
-                                EdgeInsets.symmetric(horizontal: 45),
+                                EdgeInsets.symmetric(horizontal: 25),
                             title: Row(
                               children: [
                                 Container(
@@ -345,18 +476,18 @@ class _HomeState extends State<Home> {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            "Belil bahan makanan",
+                                            "Beli bahan makanan",
                                             style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 13,
-                                                color: appGrey),
+                                                color: appGrey2),
                                           ),
                                           Text(
                                             "10:00 AM",
                                             style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 13,
-                                                color: appGrey),
+                                                color: appGrey2),
                                           )
                                         ],
                                       )
@@ -377,6 +508,12 @@ class _HomeState extends State<Home> {
         ],
       ),
     );
+  }
+
+ void updateSelectedDay(String day) {
+    setState(() {
+      SelectedDay = day;
+    });
   }
 }
 

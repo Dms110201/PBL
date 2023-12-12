@@ -10,7 +10,7 @@ class Pemasukan extends StatefulWidget {
 }
 
 class _PemasukanState extends State<Pemasukan> {
-  TextEditingController controller = TextEditingController(text: "Rp");
+  TextEditingController controller = TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -56,6 +56,7 @@ class _PemasukanState extends State<Pemasukan> {
                         border: InputBorder.none,
                         floatingLabelBehavior: FloatingLabelBehavior.always,
                       ),
+                      keyboardType: TextInputType.number,
                       controller: controller,
                       style: TextStyle(color: appPutih, fontSize: 60),
                     ),

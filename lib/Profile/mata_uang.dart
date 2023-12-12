@@ -11,7 +11,7 @@ class MataUang extends StatefulWidget {
 class _MataUangState extends State<MataUang> {
   List<Map> categories = [
     {"name": "United States (USD)", "isChacked": false},
-    {"name": "Indonesia (IDR)", "isChacked": false},
+    {"name": "Indonesia (IDR)", "isChacked": true},
     {"name": "Japan (JPY)", "isChacked": false},
     {"name": "Russia (RUB)", "isChacked": false},
     {"name": "Germany (EUR)", "isChacked": false},

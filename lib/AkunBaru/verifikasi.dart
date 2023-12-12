@@ -218,7 +218,7 @@ class _VerifikasiState extends State<Verifikasi> {
                       minimumSize: const Size(600, 50),
                     ),
                     child: const Text('Verifikasi',
-                      style: TextStyle(color: Colors.white,
+                      style: TextStyle(color: appPutih,
                       fontWeight: FontWeight.bold,
                       fontSize: 18.0,
                   ),),

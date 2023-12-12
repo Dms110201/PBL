@@ -11,7 +11,7 @@ class Bahasa extends StatefulWidget {
 class _BahasaState extends State<Bahasa> {
  List<Map> categories = [
     {"name": "English (EN)", "isChacked": false},
-    {"name": "Indonesian (ID)", "isChacked": false},
+    {"name": "Indonesian (ID)", "isChacked": true},
     {"name": "Arabic (AR)", "isChacked": false},
     {"name": "Chinese (ZH)", "isChacked": false},
     {"name": "Dutch (NL)", "isChacked": false},

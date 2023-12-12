@@ -34,8 +34,9 @@ class _ReportPengeluaranState extends State<ReportPengeluaran> {
     SalesData(DateTime(2015), 400),
   ];
 
-  bool isSwitched = false;
-  bool isPieChart = false;
+  bool isSwitched1 = false;
+  bool isPieChart1 = false;
+  bool isSwitched2 = false;
 
   var selectedType2;
   List<String> Option2 = <String>[
@@ -81,50 +82,54 @@ class _ReportPengeluaranState extends State<ReportPengeluaran> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
-                        width: 80,
+                        width: 90,
                         height: 40,
                         decoration: BoxDecoration(
-                          border: Border.all(color: appGrey2, width: 1),
+                          border: Border.all(color: appGrey),
                           borderRadius: BorderRadius.circular(20),
                         ),
-                        child: DropdownButton(
-                          borderRadius: BorderRadius.circular(10),
-                          items: Option1.map((value) {
-                            return DropdownMenuItem(
-                              child: Row(
-                                children: [
-                                  Text(
-                                    value,
-                                    style: TextStyle(color: appHitam),
-                                  ),
-                                ],
+                        child: Center(
+                          child: DropdownButton(
+                            borderRadius: BorderRadius.circular(10),
+                            items: Option1.map((value) {
+                              return DropdownMenuItem(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      value,
+                                      style: TextStyle(color: appHitam),
+                                    ),
+                                  ],
+                                ),
+                                value: value,
+                              );
+                            }).toList(),
+                            onChanged: (selectedtipeData) {
+                              setState(() {
+                                selectedType = selectedtipeData;
+                              });
+                            },
+                            value: selectedType,
+                            isExpanded: false,
+                            hint: Center(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 10),
+                                child: Text(
+                                  'pilih',
+                                  style: TextStyle(color: appGrey2),
+                                ),
                               ),
-                              value: value,
-                            );
-                          }).toList(),
-                          onChanged: (selectedtipeData) {
-                            setState(() {
-                              selectedType = selectedtipeData;
-                            });
-                          },
-                          value: selectedType,
-                          isExpanded: false,
-                          hint: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Text(
-                              'pilih',
-                              style: TextStyle(color: appGrey2),
                             ),
+                            underline: Container(),
                           ),
-                          underline: Container(),
                         ),
                       ),
                       FlutterSwitch(
-                        value: isSwitched,
+                        value: isSwitched1,
                         onToggle: (value) {
                           setState(() {
-                            isSwitched = value;
-                            isPieChart = value;
+                            isSwitched1 = value;
+                            isPieChart1 = value;
                           });
                         },
                         inactiveColor: appPutih,
@@ -172,7 +177,7 @@ class _ReportPengeluaranState extends State<ReportPengeluaran> {
                           child: Container(
                             height: 250,
                             width: chartData.length * 70,
-                            child: isPieChart
+                            child: isPieChart1
                                 ? SfCircularChart(
                                     series: <CircularSeries>[
                                       PieSeries<SalesData, DateTime>(
@@ -206,9 +211,9 @@ class _ReportPengeluaranState extends State<ReportPengeluaran> {
                         Center(
                           child: LiteRollingSwitch(
                             value: false,
-                            width: 300,
+                            width: 350,
                             textOn: "Pengeluaran",
-                            textSize: 20,
+                            textSize: 25,
                             textOff: "Pemasukan",
                             textOnColor: appPutih,
                             colorOn: appRed,
@@ -217,6 +222,9 @@ class _ReportPengeluaranState extends State<ReportPengeluaran> {
                             iconOff: Icons.arrow_downward_rounded,
                             animationDuration: Duration(milliseconds: 500),
                             onChanged: (bool state) {
+                              setState(() {
+                                isSwitched2 = state;
+                              });
                               print('turned ${(state) ? 'on' : 'off'}');
                             },
                             onDoubleTap: () {},
@@ -231,43 +239,46 @@ class _ReportPengeluaranState extends State<ReportPengeluaran> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
-                              height: 40,
+                              width: 120,
+                              height: 45,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(15),
                                 color: appPutih,
-                                border: Border.all(color: appGrey, width: 1),
+                                border: Border.all(color: appGrey2, width: 1),
                               ),
-                              child: DropdownButton(
-                                borderRadius: BorderRadius.circular(10),
-                                items: Option2.map((value) {
-                                  return DropdownMenuItem(
-                                    child: Row(
-                                      children: [
-                                        Text(
-                                          value,
-                                          style: TextStyle(color: appHitam),
-                                        ),
-                                      ],
+                              child: Center(
+                                child: DropdownButton(
+                                  borderRadius: BorderRadius.circular(10),
+                                  items: Option2.map((value) {
+                                    return DropdownMenuItem(
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                            value,
+                                            style: TextStyle(color: appHitam),
+                                          ),
+                                        ],
+                                      ),
+                                      value: value,
+                                    );
+                                  }).toList(),
+                                  onChanged: (selectedtipeData) {
+                                    setState(() {
+                                      selectedType2 = selectedtipeData;
+                                    });
+                                  },
+                                  value: selectedType2,
+                                  isExpanded: false,
+                                  hint: Padding(
+                                    padding:
+                                        const EdgeInsets.symmetric(horizontal: 20),
+                                    child: Text(
+                                      'pilih',
+                                      style: TextStyle(color: appGrey2,fontSize: 20),
                                     ),
-                                    value: value,
-                                  );
-                                }).toList(),
-                                onChanged: (selectedtipeData) {
-                                  setState(() {
-                                    selectedType2 = selectedtipeData;
-                                  });
-                                },
-                                value: selectedType2,
-                                isExpanded: false,
-                                hint: Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(horizontal: 20),
-                                  child: Text(
-                                    'pilih',
-                                    style: TextStyle(color: appGrey2,fontSize: 20),
                                   ),
+                                  underline: Container(),
                                 ),
-                                underline: Container(),
                               ),
                             ),
                           ],
@@ -275,87 +286,169 @@ class _ReportPengeluaranState extends State<ReportPengeluaran> {
                         SizedBox(
                           height: 5,
                         ),
-                        ListView.separated(
-                          separatorBuilder: (context, index) {
-                            return SizedBox(
-                              height: 10,
-                            );
-                          },
-                          shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
-                          itemCount: 5,
-                          itemBuilder: (context, index) {
-                            return ListTile(
-                              contentPadding:
-                                  EdgeInsets.symmetric(horizontal: 25),
-                              title: Row(
-                                children: [
-                                  Container(
-                                    width: 50,
-                                    height: 50,
-                                    margin: EdgeInsets.only(right: 6),
-                                    decoration: BoxDecoration(
-                                      color: appKuning2,
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Image.asset('assets/icon/belanja.png'),
-                                  ),
-                                  Expanded(
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                        isSwitched2
+                            ? ListView.separated(
+                                separatorBuilder: (context, index) {
+                                  return SizedBox(
+                                    height: 10,
+                                  );
+                                },
+                                shrinkWrap: true,
+                                physics: NeverScrollableScrollPhysics(),
+                                itemCount: 5,
+                                itemBuilder: (context, index) {
+                                  return ListTile(
+                                    contentPadding:
+                                        EdgeInsets.symmetric(horizontal: 25),
+                                    title: Row(
                                       children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text(
-                                              "Belanja",
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                            Text(
-                                              "- Rp.50.000",
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: appRed
-                                              ),
-                                            ),
-                                          ],
+                                        Container(
+                                          width: 50,
+                                          height: 50,
+                                          margin: EdgeInsets.only(right: 6),
+                                          decoration: BoxDecoration(
+                                            color: appKuning2,
+                                            borderRadius: BorderRadius.circular(20),
+                                          ),
+                                          child: Image.asset('assets/icon/belanja.png'),
                                         ),
-                                        SizedBox(
-                                          height: 12,
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text(
-                                              "Belil bahan makanan",
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.w400,
-                                                fontSize: 13,
-                                                color: Colors.grey,
+                                        Expanded(
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            children: [
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Text(
+                                                    "Belanja",
+                                                    style: TextStyle(
+                                                      fontWeight: FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    "- Rp.50.000",
+                                                    style: TextStyle(
+                                                      fontWeight: FontWeight.bold,
+                                                      color: appRed
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
-                                            ),
-                                            Text(
-                                              "10:00 AM",
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.w400,
-                                                fontSize: 13,
-                                                color: Colors.grey,
+                                              SizedBox(
+                                                height: 12,
                                               ),
-                                            ),
-                                          ],
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Text(
+                                                    "Belil bahan makanan",
+                                                    style: TextStyle(
+                                                      fontWeight: FontWeight.w400,
+                                                      fontSize: 13,
+                                                      color: appGrey3,
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    "10:00 AM",
+                                                    style: TextStyle(
+                                                      fontWeight: FontWeight.w400,
+                                                      fontSize: 13,
+                                                      color: appGrey3,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     ),
-                                  ),
-                                ],
+                                  );
+                                },
+                              )
+                            : ListView.separated(
+                                separatorBuilder: (context, index) {
+                                  return SizedBox(
+                                    height: 10,
+                                  );
+                                },
+                                shrinkWrap: true,
+                                physics: NeverScrollableScrollPhysics(),
+                                itemCount: 5,
+                                itemBuilder: (context, index) {
+                                  return ListTile(
+                                    contentPadding:
+                                        EdgeInsets.symmetric(horizontal: 25),
+                                    title: Row(
+                                      children: [
+                                        Container(
+                                          width: 50,
+                                          height: 50,
+                                          margin: EdgeInsets.only(right: 6),
+                                          decoration: BoxDecoration(
+                                            color: appHijau3,
+                                            borderRadius: BorderRadius.circular(20),
+                                          ),
+                                          child: Image.asset('assets/icon/salary.png'),
+                                        ),
+                                        Expanded(
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            children: [
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Text(
+                                                    "Gaji",
+                                                    style: TextStyle(
+                                                      fontWeight: FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    "+ Rp.2.000.000",
+                                                    style: TextStyle(
+                                                      fontWeight: FontWeight.bold,
+                                                      color: appHijau
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                height: 12,
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Text(
+                                                    "Penerimaan gaji bulan ini",
+                                                    style: TextStyle(
+                                                      fontWeight: FontWeight.w400,
+                                                      fontSize: 13,
+                                                      color: appGrey3,
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    "10:00 AM", 
+                                                    style: TextStyle(
+                                                      fontWeight: FontWeight.w400,
+                                                      fontSize: 13,
+                                                      color: appGrey3,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                },
                               ),
-                            );
-                          },
-                        ),
                       ],
                     ),
                   ),
@@ -368,4 +461,3 @@ class _ReportPengeluaranState extends State<ReportPengeluaran> {
     );
   }
 }
-

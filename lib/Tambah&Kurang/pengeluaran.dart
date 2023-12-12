@@ -10,7 +10,7 @@ class Pengeluaran extends StatefulWidget {
 }
 
 class _PengeluaranState extends State<Pengeluaran> {
-  TextEditingController controller = TextEditingController(text: "Rp");
+  TextEditingController controller = TextEditingController(text: "");
   
   @override
   Widget build(BuildContext context) {
@@ -55,6 +55,7 @@ class _PengeluaranState extends State<Pengeluaran> {
                         border: InputBorder.none,
                         floatingLabelBehavior: FloatingLabelBehavior.always,
                       ),
+                      keyboardType: TextInputType.number,
                       controller: controller,
                       style: TextStyle(color: appPutih, fontSize: 60),
                     ),

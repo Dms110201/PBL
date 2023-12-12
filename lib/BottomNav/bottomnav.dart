@@ -29,24 +29,18 @@ class _BottomNavState extends State<BottomNav> {
         bucket: bucket,
         child: currentScreen,
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        backgroundColor: appHijau,
-        onPressed: () {},
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
         notchMargin: 15,
         child: Container(
           height: 60,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children:<Widget> [
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  MaterialButton( minWidth: 50, onPressed: () {
+                  MaterialButton( minWidth: 100, onPressed: () {
                     setState(() {
                       currentScreen = Home();
                       currentTab = 0;
@@ -60,7 +54,7 @@ class _BottomNavState extends State<BottomNav> {
                     ],
                   ),
                   ),
-                  MaterialButton( minWidth: 50, onPressed: () {
+                  MaterialButton( minWidth: 100, onPressed: () {
                     setState(() {
                       currentScreen = transaction();
                       currentTab = 1;
@@ -79,7 +73,7 @@ class _BottomNavState extends State<BottomNav> {
                Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  MaterialButton( minWidth: 50, onPressed: () {
+                  MaterialButton( minWidth: 100, onPressed: () {
                     setState(() {
                       currentScreen = ExportData();
                       currentTab = 2;

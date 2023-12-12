@@ -10,7 +10,7 @@ class AkunBaru extends StatefulWidget {
 }
 
 class _AkunBaruState extends State<AkunBaru> {
-  TextEditingController controller = TextEditingController(text: "Rp");
+  TextEditingController controller = TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -59,6 +59,7 @@ class _AkunBaruState extends State<AkunBaru> {
                         border: InputBorder.none,
                         floatingLabelBehavior: FloatingLabelBehavior.always,
                       ),
+                      keyboardType: TextInputType.number,
                       controller: controller,
                       style: TextStyle(color: appPutih, fontSize: 60),
                     ),

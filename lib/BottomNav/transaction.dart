@@ -30,45 +30,49 @@ class _transactionState extends State<transaction> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Padding(padding: EdgeInsets.all(7)),
+              Padding(padding: EdgeInsets.all(8)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 80,
+                    width: 90,
                     height: 40,
                     decoration: BoxDecoration(
                       border: Border.all(color: appGrey3, width: 1),
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: DropdownButton(
-                      borderRadius: BorderRadius.circular(10),
-                      items: Option1.map((value) => DropdownMenuItem(
-                            child: Row(
-                              children: [
-                                Text(
-                                  value,
-                                  style: TextStyle(color: appHitam),
-                                ),
-                              ],
-                            ),
-                            value: value,
-                          )).toList(),
-                      onChanged: (selectedtipeData) {
-                        setState(() {
-                          selectedType = selectedtipeData;
-                        });
-                      },
-                      value: selectedType,
-                      isExpanded: false,
-                      hint: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 12),
-                        child: Text(
-                          'pilih',
-                          style: TextStyle(color: appGrey3),
+                    child:
+                    Center(
+                      child: DropdownButton(
+                        borderRadius: BorderRadius.circular(10),
+                        items: Option1.map((value) => DropdownMenuItem(
+                              child: Row(
+                                children: [
+                                  Text(
+                                    value,
+                                    style: TextStyle(color: appHitam),
+                                  ),
+                                ],
+                              ),
+                              value: value,
+                            )).toList(),
+                        onChanged: (selectedtipeData) {
+                          setState(() {
+                            selectedType = selectedtipeData;
+                          });
+                        },
+                        value: selectedType,
+                        isExpanded: false,
+                        hint: 
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          child: Text(
+                            'pilih',
+                            style: TextStyle(color: appGrey3),
+                          ),
                         ),
+                        underline: Container(),
                       ),
-                      underline: Container(),
                     ),
                   ),
                 ],
@@ -90,7 +94,7 @@ class _transactionState extends State<transaction> {
                       backgroundColor: appGrey,
                       elevation: 0,
                       minimumSize: const Size(
-                        600,
+                        610,
                         50,
                       ),
                     ),

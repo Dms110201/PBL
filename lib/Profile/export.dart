@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbl/BottomNav/bottomnav.dart';
 import 'package:pbl/Color/color.dart';
 
 class Export extends StatefulWidget {
@@ -39,7 +40,10 @@ class _ExportState extends State<Export> {
                   ),
                   SizedBox(height: mediaQuery.size.height * 0.07),
                   ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const BottomNav()),
+                  );},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: appHijau,
                         shape: RoundedRectangleBorder(

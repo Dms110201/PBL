@@ -18,7 +18,7 @@ class _ProfileState extends State<Profile> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(color: appGrey),
+            decoration: BoxDecoration(color: appGrey5),
           ),
           SafeArea(
             child: Column(
