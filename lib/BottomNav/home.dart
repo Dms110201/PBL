@@ -64,7 +64,7 @@ class _HomeState extends State<Home> {
                   child: Row(
                     children: [
                       Container(
-                        width: 50,
+                        width: 60,
                         height: 60,
                         child: Image.asset(
                           'assets/icon/Rectangle 9.png',
@@ -77,8 +77,6 @@ class _HomeState extends State<Home> {
                             Row(
                               children: [
                                 Container(
-                                  width: 110,
-                                  height: 40,
                                   child: Center(
                                     child: DropdownButton(
                                       items: Option1.map((value) {
@@ -125,7 +123,7 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 SizedBox(
-                  height: 5,
+                  height: 2,
                 ),
                 Text(
                   "UangKu",
@@ -159,7 +157,7 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       child: Container(
-                        width: 170,
+                        width: 175,
                         padding: EdgeInsets.all(15),
                         child: Row(
                           children: [
@@ -208,7 +206,7 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       child: Container(
-                        width: 170,
+                        width: 175,
                         padding: EdgeInsets.all(15),
                         child: Row(
                           children: [
@@ -294,6 +292,7 @@ class _HomeState extends State<Home> {
                       Column(
                         children: [
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               GestureDetector(
                                 onTap: () {
@@ -311,7 +310,7 @@ class _HomeState extends State<Home> {
                                   child: Text(
                                     "Hari ini",
                                     style: TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 17,
                                       fontWeight: FontWeight.w600,
                                       color: SelectedDay == "hari ini"
                                           ? appKuning
@@ -338,7 +337,7 @@ class _HomeState extends State<Home> {
                                   child: Text(
                                     "Minggu",
                                     style: TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 17,
                                       fontWeight: FontWeight.w400,
                                       color: SelectedDay == "Minggu"
                                           ? appKuning
@@ -365,7 +364,7 @@ class _HomeState extends State<Home> {
                                   child: Text(
                                     "Senin",
                                     style: TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 17,
                                       fontWeight: FontWeight.w400,
                                       color: SelectedDay == "Senin"
                                           ? appKuning
@@ -392,7 +391,7 @@ class _HomeState extends State<Home> {
                                   child: Text(
                                     "Selasa",
                                     style: TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 17,
                                       fontWeight: FontWeight.w400,
                                       color: SelectedDay == "Selasa"
                                           ? appKuning

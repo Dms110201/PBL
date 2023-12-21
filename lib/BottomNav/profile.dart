@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pbl/BottomNav/bottomnav.dart';
 import 'package:pbl/Color/color.dart';
@@ -12,6 +13,12 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  Future<void> _signOut() async {
+    await _auth.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -161,7 +168,8 @@ class _ProfileState extends State<Profile> {
                   ),
                 ),
                 InkWell(
-                  onTap: () {
+                  onTap: () async{
+                    await _signOut();
                     Navigator.push(
                       context,
                       MaterialPageRoute(

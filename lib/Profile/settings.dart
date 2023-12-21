@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pbl/Color/color.dart';
 import 'package:pbl/Profile/bahasa.dart';
 import 'package:pbl/Profile/mata_uang.dart';
-import 'package:pbl/Profile/notifikasi.dart';
+
 
 class Settings extends StatefulWidget {
   const Settings({Key? key});
@@ -76,26 +76,6 @@ class _SettingsState extends State<Settings> {
                     ],
                   ),
                 ),
-                SizedBox(height: 34,),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Notifikasi(),
-                      ),
-                    );
-                  },
-                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: Text("Notification",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
-                      ),SizedBox(width: 250,),
-                      Icon(Icons.arrow_forward_ios_rounded,color: appHijau2, size: 25,)
-                    ],
-                  ),
-                )
               ],
             ),
           ),

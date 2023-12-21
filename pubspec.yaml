@@ -38,6 +38,8 @@ dependencies:
   flutter_switch: ^0.3.2
   lite_rolling_switch: ^1.0.1
   syncfusion_flutter_charts: ^23.1.36
+  firebase_auth: ^4.15.3
+  cloud_firestore: ^4.13.6
 
 dev_dependencies:
   flutter_test:

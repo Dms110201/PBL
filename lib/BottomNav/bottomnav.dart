@@ -33,14 +33,13 @@ class _BottomNavState extends State<BottomNav> {
         shape: CircularNotchedRectangle(),
         notchMargin: 15,
         child: Container(
-          height: 60,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children:<Widget> [
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  MaterialButton( minWidth: 100, onPressed: () {
+                  MaterialButton( minWidth: 80, onPressed: () {
                     setState(() {
                       currentScreen = Home();
                       currentTab = 0;
@@ -49,12 +48,12 @@ class _BottomNavState extends State<BottomNav> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.home,color: currentTab == 0 ? appHijau : appGrey3,size: 40,),
+                      Icon(Icons.home,color: currentTab == 0 ? appHijau : appGrey3,size: 35,),
                       Text("Home",style: TextStyle(color: currentTab == 0 ? appHijau : appGrey3,),)
                     ],
                   ),
                   ),
-                  MaterialButton( minWidth: 100, onPressed: () {
+                  MaterialButton( minWidth: 110, onPressed: () {
                     setState(() {
                       currentScreen = transaction();
                       currentTab = 1;
@@ -63,7 +62,7 @@ class _BottomNavState extends State<BottomNav> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.compare_arrows_rounded,color: currentTab == 1 ? appHijau : appGrey3,size: 40,),
+                      Icon(Icons.compare_arrows_rounded,color: currentTab == 1 ? appHijau : appGrey2,size: 35,),
                       Text("Transaksi",style: TextStyle(color: currentTab == 1 ? appHijau : appGrey3,),)
                     ],
                   ),
@@ -73,7 +72,7 @@ class _BottomNavState extends State<BottomNav> {
                Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  MaterialButton( minWidth: 100, onPressed: () {
+                  MaterialButton( minWidth: 90, onPressed: () {
                     setState(() {
                       currentScreen = ExportData();
                       currentTab = 2;
@@ -82,12 +81,12 @@ class _BottomNavState extends State<BottomNav> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.email_rounded,color: currentTab == 2 ? appHijau : appGrey3,size: 40,),
+                      Icon(Icons.email_rounded,color: currentTab == 2 ? appHijau : appGrey3,size: 35,),
                       Text("Export",style: TextStyle(color: currentTab == 2 ? appHijau : appGrey3,),)
                     ],
                   ),
                   ),
-                  MaterialButton( minWidth: 50, onPressed: () {
+                  MaterialButton( minWidth: 90, onPressed: () {
                     setState(() {
                       currentScreen = Profile();
                       currentTab = 3;
@@ -96,7 +95,7 @@ class _BottomNavState extends State<BottomNav> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.person_sharp,color: currentTab == 3 ? appHijau : appGrey3,size: 40,),
+                      Icon(Icons.person_sharp,color: currentTab == 3 ? appHijau : appGrey3,size: 35,),
                       Text("Profil",style: TextStyle(color: currentTab == 3 ? appHijau : appGrey3,),)
                     ],
                   ),
