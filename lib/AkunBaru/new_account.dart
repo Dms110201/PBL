@@ -66,68 +66,81 @@ class _AkunBaruState extends State<AkunBaru> {
                   ],
                 ),
               ),
-              SizedBox(height: 2,),
-                Container(
-                  decoration: BoxDecoration(
-                    color: appPutih,
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(50),
-                      topLeft: Radius.circular(50),
-                    ),
+              SizedBox(
+                height: 2,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: appPutih,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(50),
+                    topLeft: Radius.circular(50),
                   ),
-                  height: mediaQuery.size.height * 0.30,
-                  child: Center(
+                ),
+                height: mediaQuery.size.height * 0.30,
+                child: Center(
                   child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30,vertical: 15),
-                  child: Column(
-                    children: [
-                      TextField(
-                        decoration: InputDecoration(
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                    child: Column(
+                      children: [
+                        TextField(
+                            decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: appGrey2)),
-                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: appGrey2)),
+                          focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: appGrey)),
-                            hintText: "Judul",
+                          hintText: "Judul",
                           fillColor: appPutih,
-                        filled: true,)
-                      ),
-                      SizedBox(height: 15,),
-                      TextField(
-                        decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: appGrey2)),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: appGrey)),
-                            hintText: "Jenis Pengeluaran",
-                          fillColor: appPutih,
-                        filled: true,),
-                      ),
-                       SizedBox(height: mediaQuery.size.height * 0.02,),
-                        Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 1),
-                              child: ElevatedButton(onPressed:() {Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SetupSelesai()),
-                          );},
-                      style: ElevatedButton.styleFrom(
-                              backgroundColor: appHijau,
-                          minimumSize: const Size(600, 50),
+                          filled: true,
+                        )),
+                        SizedBox(
+                          height: 15,
                         ),
-                          child: const Text('Lanjut',
-                              style: TextStyle(color: appPutih,
-                                  fontWeight: FontWeight.bold,
-                              fontSize: 18.0,
+                        TextField(
+                          decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: appGrey2)),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: appGrey)),
+                            hintText: "Jenis Pemasukan",
+                            fillColor: appPutih,
+                            filled: true,
+                          ),
+                        ),
+                        SizedBox(
+                          height: mediaQuery.size.height * 0.02,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 1),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SetupSelesai()),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: appHijau,
+                              shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                              minimumSize: const Size(600, 50),
+                            ),
+                            child: const Text(
+                              'Lanjut',
+                              style: TextStyle(
+                                color: appPutih,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18.0,
                               ),
                             ),
                           ),
                         ),
                       ],
                     ),
-                   ),
                   ),
                 ),
- 
+              ),
             ],
           ))
         ],

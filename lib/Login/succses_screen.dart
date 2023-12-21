@@ -12,7 +12,7 @@ class SetupSelesai extends StatefulWidget {
 class _SetupSelesaiState extends State<SetupSelesai> {
   @override
   Widget build(BuildContext context) {
-    Future.delayed(const Duration(seconds: 3)).then((value) {
+    Future.delayed(const Duration(seconds: 2)).then((value) {
       Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(
             builder: (context) => const BottomNav(),
@@ -21,26 +21,31 @@ class _SetupSelesaiState extends State<SetupSelesai> {
     });
     return Scaffold(
       backgroundColor: appPutih,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/images/centang.png',
-              height: 200,
-              width: 200,
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(padding: EdgeInsets.all(130)),
+                Image.asset(
+                  'assets/images/centang.png',
+                  height: 200,
+                  width: 200,
+                ),
+                const Center(
+                  child: Column(
+                    children: [
+                      Text(
+                        "UangMu Siap",
+                        style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
+                      )
+                    ],
+                  ),
+                )
+              ],
             ),
-            const Center(
-              child: Column(
-                children: [
-                  Text(
-                    "UangMu Siap",
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
-                  )
-                ],
-              ),
-            )
-          ],
+          ),
         ),
       ),
     );

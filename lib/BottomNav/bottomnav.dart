@@ -30,7 +30,7 @@ class _BottomNavState extends State<BottomNav> {
         child: currentScreen,
       ),
       bottomNavigationBar: BottomAppBar(
-        shape: CircularNotchedRectangle(),
+        color: Color.fromRGBO(255, 255, 255, 1),
         notchMargin: 15,
         child: Container(
           child: Row(
